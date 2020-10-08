@@ -1,7 +1,11 @@
 ﻿using System;
+using System.IO;
 using Calendar.InfoPanel.Utils;
+using SpeechKitApi.Utils;
 using UnityEngine;
 using Utils;
+
+using CalendarParams = Calendar.Utils.Params;
 
 namespace Data.Calendar
 {
@@ -38,12 +42,15 @@ namespace Data.Calendar
     {
         public CalendarEventTypes calendarEventType;
 
+        public string headerInfo;
         [TextArea]
         public string textInfo;
         public Sprite sprite;
+        public AudioClip clip;
         
         [SerializeField] private string stringDate;
         
+        public string SourceId { get; private set; }
         public DateTime DateTime { get; private set; }
         
         public CalendarEventData(CalendarEventTypes newCalendarEventType, DateTime newDateTime)
@@ -51,6 +58,8 @@ namespace Data.Calendar
             calendarEventType = newCalendarEventType;
             DateTime = newDateTime;
             stringDate = newDateTime.ToString(DateTimeExtensions.ConvertDateTimeFormat);
+            
+            SourceId = GenerateSourceId(this);
         }
         
         /// <summary>
@@ -59,6 +68,9 @@ namespace Data.Calendar
         public void Initialize()
         {
             DateTime = stringDate.GetDateTime();
+            
+            SourceId = GenerateSourceId(this);
+            Directory.CreateDirectory($"{CalendarParams.SoundGenerateFolder}\\{SourceId}");
         }
 
         /// <summary>
@@ -72,5 +84,11 @@ namespace Data.Calendar
         /// </summary>
         public bool ThisMonth(DateTime compareDate)
             => DateTime.Year == compareDate.Year && DateTime.Month == compareDate.Month;
+
+        /// <summary>
+        ///  
+        /// </summary>
+        public static string GenerateSourceId(CalendarEventData data)
+            => $"{data.calendarEventType}\\{data.DateTime:dd_MM_yyyy}\\{data.headerInfo.GetValidPathString()}";
     }
 }

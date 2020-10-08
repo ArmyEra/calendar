@@ -9,7 +9,8 @@ namespace Calendar.InfoPanel
     {
         private const int UpdateRate = 60;
         
-        [SerializeField] private Text textComponent;
+        [SerializeField] private Text timeTextComponent;
+        
 
         private int DelayInvoking => (UpdateRate - DateTime.Now.Second) + 1;
         
@@ -28,9 +29,8 @@ namespace Calendar.InfoPanel
         private void Execute()
         {
             var now = DateTime.Now;
-            var shortTime = now.ToShortTimeString();
-            var shortDate = now.ToString(DateTimeExtensions.ClockDateFormat);
-            textComponent.text = $"{shortTime}\n{shortDate}";
+            
+            timeTextComponent.text = now.ToShortTimeString();
         }
     }
 }

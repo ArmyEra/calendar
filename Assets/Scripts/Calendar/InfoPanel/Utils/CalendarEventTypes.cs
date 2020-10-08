@@ -6,10 +6,10 @@ namespace Calendar.InfoPanel.Utils
     {
         Null,
         
-        [EnumValueString("Дни Воинской Славы")]
+        [EnumValueString("Дни воиской славы и памятные даты")]
         MilitaryMemoryDay,
         
-        [EnumValueString("Этот день в науке и технике")]
+        [EnumValueString("Знаменательные научные события")]
         ScienceDay,
         
         [EnumValueString("Планировщик")]

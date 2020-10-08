@@ -44,6 +44,9 @@
               <e p="ViewInfoController.cs" t="Include" />
             </e>
             <e p="MainPageController.cs" t="Include" />
+            <e p="Utils" t="Include">
+              <e p="Params.cs" t="Include" />
+            </e>
           </e>
           <e p="Core" t="Include">
             <e p="EventManager.cs" t="Include" />
@@ -53,6 +56,10 @@
               <e p="CalendarEventsContainer.cs" t="Include" />
             </e>
           </e>
+          <e p="OrderExecuter" t="Include">
+            <e p="IStartable.cs" t="Include" />
+            <e p="OrderInitializer.cs" t="Include" />
+          </e>
           <e p="Utils" t="Include">
             <e p="CalendarEventDataExtensions.cs" t="Include" />
             <e p="CanvasGroupControl.cs" t="Include" />
@@ -61,6 +68,7 @@
             <e p="Vector2Extensions.cs" t="Include" />
           </e>
           <e p="YandexSpeechKit" t="Include">
+            <e p="SpeechKitManager.cs" t="Include" />
             <e p="Utils" t="Include">
               <e p="ClientParams.cs" t="Include" />
             </e>

@@ -5,15 +5,8 @@ using Calendar.InfoPanel;
 using Calendar.InfoPanel.Utils;
 using Core;
 using Data.Calendar;
-using SpeechKitApi;
-using SpeechKitApi.Enums;
-using SpeechKitApi.Models;
-using SpeechKitApi.Models.TokenResources;
-using SpeechKitApi.Wav;
-using UnityAsyncHelper.Core;
 using UnityEngine;
 using Utils;
-using YandexSpeechKit.Utils;
 using EventType = Core.EventType;
 
 namespace Calendar
@@ -55,8 +48,7 @@ namespace Calendar
             
             ShowMonth(DateTime.Now);
 
-            var path = Application.persistentDataPath;
-            ThreadManager.AsyncExecute(Execute, () => Debug.Log($"Saved at \"{Application.persistentDataPath}\" directory"), path);
+            //ThreadManager.AsyncExecute(Execute, () => Debug.Log($"Saved at \"{Application.persistentDataPath}\" directory"), Params.SoundGenerateFolder);
         }
         
         private void OnDestroy()
@@ -105,32 +97,32 @@ namespace Calendar
             infoPanelController.UpdateEvents(newCalendarEvent);
         }
         
-        static void Execute(params object[] args)
-        {
-            var path = (string) args[0];
-            var client = SpeechKitClient.Create(new OAuthToken {Key = ClientParams.OAuthKey});
-
-            var externalOptions = new SynthesisExternalOptions
-            {
-                Emotion = Emotion.Evil,
-                Language = SynthesisLanguage.Russian,
-                Quality = SynthesisQuality.High,
-                Speaker = Speaker.Oksana,
-                AudioFormat = SynthesisAudioFormat.Lpcm
-            };
-
-            var optionsArray = SynthesisOptions.Create(
-                new [] {"Соси жопу", "А можешь и не жопу :-)"},
-                externalOptions,
-                ClientParams.YandexCloudFolderId
-            ).ToArray();
-            
-            var dataArray = client.GetMultipleSpeech(optionsArray).GetAwaiter().GetResult();
-            for(var i = 0; i < dataArray.Length; i++)
-                WavConverter.Convert(in dataArray[i], in optionsArray[i], path);
-            
-            client.Dispose();
-        }
+        // static void Execute(params object[] args)
+        // {
+        //     // var path = (string) args[0];
+        //     //
+        //     //
+        //     // var externalOptions = new SynthesisExternalOptions
+        //     // {
+        //     //     Emotion = Emotion.Evil,
+        //     //     Language = SynthesisLanguage.Russian,
+        //     //     Quality = SynthesisQuality.High,
+        //     //     Speaker = Speaker.Oksana,
+        //     //     AudioFormat = SynthesisAudioFormat.Lpcm
+        //     // };
+        //     //
+        //     // var optionsArray = SynthesisOptions.Create(
+        //     //     new [] {"Добрый день!"},
+        //     //     externalOptions,
+        //     //     ClientParams.YandexCloudFolderId
+        //     // ).ToArray();
+        //     //
+        //     // var dataArray = client.GetMultipleSpeech(optionsArray).GetAwaiter().GetResult();
+        //     // for(var i = 0; i < dataArray.Length; i++)
+        //     //     WavConverter.Convert(in dataArray[i], in optionsArray[i], path);
+        //     //
+        //     // client.Dispose();
+        // }
     }
 }
 

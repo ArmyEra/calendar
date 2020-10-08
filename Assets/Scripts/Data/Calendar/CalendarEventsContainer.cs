@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
 using Calendar.InfoPanel.Utils;
+using Extensions;
 using SpeechKitApi.Utils;
 using UnityEngine;
 using Utils;
-
-using CalendarParams = Calendar.Utils.Params;
+using Params = Audio.Utils.Params;
 
 namespace Data.Calendar
 {
@@ -40,26 +40,64 @@ namespace Data.Calendar
     [Serializable]
     public class CalendarEventData
     {
-        public CalendarEventTypes calendarEventType;
-
-        public string headerInfo;
-        [TextArea]
-        public string textInfo;
-        public Sprite sprite;
-        public AudioClip clip;
-        
-        [SerializeField] private string stringDate;
-        
+        /// <summary>
+        /// УИД, который является и относительным путем к аудио
+        /// </summary>
         public string SourceId { get; private set; }
+        
+        /// <summary>
+        /// Дата события
+        /// </summary>
         public DateTime DateTime { get; private set; }
         
+        /// <summary>
+        /// Необходимо ли сохранять в PlayerPrefs 
+        /// </summary>
+        public bool NeedSave { get; }
+        
+        /// <summary>
+        /// Тип события
+        /// </summary>
+        public CalendarEventTypes calendarEventType;
+
+        /// <summary>
+        /// Заголовок
+        /// </summary>
+        public string headerInfo;
+        
+        /// <summary>
+        /// Текстовая заметка 
+        /// </summary>
+        [TextArea]
+        public string textInfo;
+        
+        /// <summary>
+        /// Картинка
+        /// </summary>
+        public Sprite sprite;
+        
+        /// <summary>
+        /// Аудио клип
+        /// </summary>
+        public AudioClip clip;
+        
+        /// <summary>
+        /// Строковое представление даты, которое сериализуется в Дату
+        /// </summary>
+        [SerializeField] private string stringDate;
+        
+        /// <summary>
+        /// Инициализаця нового элемента, который будем сохранять в настройки 
+        /// </summary>
         public CalendarEventData(CalendarEventTypes newCalendarEventType, DateTime newDateTime)
         {
             calendarEventType = newCalendarEventType;
             DateTime = newDateTime;
             stringDate = newDateTime.ToString(DateTimeExtensions.ConvertDateTimeFormat);
+            headerInfo = "New node";
             
             SourceId = GenerateSourceId(this);
+            NeedSave = true;
         }
         
         /// <summary>
@@ -70,7 +108,7 @@ namespace Data.Calendar
             DateTime = stringDate.GetDateTime();
             
             SourceId = GenerateSourceId(this);
-            Directory.CreateDirectory($"{CalendarParams.SoundGenerateFolder}\\{SourceId}");
+            Directory.CreateDirectory(Params.SoundPath(SourceId));
         }
 
         /// <summary>
@@ -86,7 +124,7 @@ namespace Data.Calendar
             => DateTime.Year == compareDate.Year && DateTime.Month == compareDate.Month;
 
         /// <summary>
-        ///  
+        /// Генерирует УИД события, который является относительным путем к аудио-сообщению
         /// </summary>
         public static string GenerateSourceId(CalendarEventData data)
             => $"{data.calendarEventType}\\{data.DateTime:dd_MM_yyyy}\\{data.headerInfo.GetValidPathString()}";

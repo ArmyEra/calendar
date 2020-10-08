@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Globalization;
 using Calendar.DatePanel.Utils;
 
-namespace Utils
+namespace Extensions
 {
     public static class DateTimeExtensions
     {

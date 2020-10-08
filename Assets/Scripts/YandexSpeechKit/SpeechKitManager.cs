@@ -1,25 +1,48 @@
-﻿using OrderExecuter;
+﻿using System;
+using System.Collections;
+using System.IO;
+using Core;
+using Data.Calendar;
+using OrderExecuter;
 using SpeechKitApi;
 using SpeechKitApi.Models.TokenResources;
+using UnityAsyncHelper.Core;
 using UnityEngine;
+using UnityEngine.Networking;
+using Utils;
 using YandexSpeechKit.Utils;
+using EventType = Core.EventType;
 
 namespace YandexSpeechKit
 {
-    //ToDo: Вызов по очереди
-    //ToDo: Создание записей, которых нет
-    public class SpeechKitManager: MonoBehaviour, IStartable
+    public class SpeechKitManager: Singleton<SpeechKitManager>, IStartable
     {
-        private static SpeechKitClient _client;
+        public static SpeechKitClient Client;
         
         public void OnStart()
         {
-            var _client = SpeechKitClient.Create(new OAuthToken {Key = ClientParams.OAuthKey});
+            object[] AuthorizationBegin()
+            {
+                return new object[]
+                {
+                    SpeechKitClient.Create(new OAuthToken {Key = ClientParams.OAuthKey})
+                };
+            }
+            
+            void InitializeCallback(object[] args)
+            {
+                Client = (SpeechKitClient) args[0];
+                Debug.Log("Authorized!");
+                
+                EventManager.RaiseEvent(EventType.YandexClientCreated);
+            }
+            
+            ThreadManager.AsyncExecute(AuthorizationBegin, InitializeCallback);
         }
-        
+
         private void OnDestroy()
         {
-            _client.Dispose();
+            Client.Dispose();
         }
     }
 }

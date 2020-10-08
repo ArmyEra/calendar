@@ -4,7 +4,7 @@ using System.Linq;
 using Calendar.InfoPanel.Utils;
 using Data.Calendar;
 
-namespace Utils
+namespace Extensions
 {
     public static class CalendarEventDataExtensions
     {

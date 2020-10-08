@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Calendar.InfoPanel.Utils;
 using Core;
 using Data.Calendar;
+using Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;

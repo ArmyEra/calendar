@@ -8,6 +8,8 @@ namespace Core
     /// </summary>
     public enum EventType 
     {
+        YandexClientCreated,
+        
         OnDateChanged,
         OnCalendarEventTypeChanged,
         

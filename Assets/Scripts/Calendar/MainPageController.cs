@@ -5,13 +5,15 @@ using Calendar.InfoPanel;
 using Calendar.InfoPanel.Utils;
 using Core;
 using Data.Calendar;
+using Extensions;
+using OrderExecuter;
 using UnityEngine;
 using Utils;
 using EventType = Core.EventType;
 
 namespace Calendar
 {
-    public class MainPageController : MonoBehaviour
+    public class MainPageController : MonoBehaviour, IStartable
     {
         /// <summary>
         /// Текущая активная дата
@@ -37,7 +39,7 @@ namespace Calendar
         private CalendarEventsContainer[] CalendarEventsContainers
             => new[] {holidayCalendarEvents, scheduledCalendarEvents};
         
-        private void Start()
+        public void OnStart()
         {
             holidayCalendarEvents.Initialize();
             scheduledCalendarEvents.Initialize();

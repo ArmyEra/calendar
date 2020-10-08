@@ -1663,6 +1663,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1065984659}
   - component: {fileID: 1065984658}
+  - component: {fileID: 1065984661}
+  - component: {fileID: 1065984662}
+  - component: {fileID: 1065984660}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -1696,6 +1699,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1065984660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065984657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd133e13fe444c4ca7dfb9db83823825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroy: 0
+--- !u!114 &1065984661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065984657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f0442bbed64520bb07ad5cfed624a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startableBehaviours:
+  - {fileID: 1065984662}
+  - {fileID: 1065984660}
+  - {fileID: 401312282}
+--- !u!114 &1065984662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065984657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29d6d85d2754315902a1d6d80031c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroy: 0
 --- !u!1 &1075785787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3455,8 +3500,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 949690160}
   m_HandleRect: {fileID: 949690159}
   m_Direction: 0
-  m_Value: 1
-  m_Size: 0.9999999
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

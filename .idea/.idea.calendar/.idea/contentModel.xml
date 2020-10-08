@@ -20,6 +20,7 @@
             <e p="EnumValueStringAttribute.cs" t="Include" />
           </e>
           <e p="Audio" t="Include">
+            <e p="DefaultSoundManager.cs" t="Include" />
             <e p="SoundManger.cs" t="Include" />
             <e p="Utils" t="Include">
               <e p="DefaultSoundType.cs" t="Include" />

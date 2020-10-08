@@ -42,9 +42,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Vector2IntExtensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/DatePanel/Utils/Params.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Vector2Extensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/DatePanel/Utils/GridCell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/DatePanel/Utils/DateItemSetUpData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Utils/NewsTypes.cs" />
@@ -88,11 +85,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/AudioManger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/DefaultSounds.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/AudioManger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/Params.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/DefaultSoundType.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/Calendar/CalendarEventsContainer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/YandexSpeechKit/SpeechKitManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Sounds.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/Params.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/DefaultSounds.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/SoundManger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/DefaultSoundManager.cs" />
       </list>
     </option>
   </component>
@@ -127,10 +127,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="18356">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="18356" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -160,6 +160,7 @@
       <workItem from="1602142666582" duration="884000" />
       <workItem from="1602145379387" duration="1645000" />
       <workItem from="1602147068217" duration="14705000" />
+      <workItem from="1602166725583" duration="3357000" />
     </task>
     <servers />
   </component>

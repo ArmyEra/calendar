@@ -95,3 +95,6 @@ Desktop.ini
 
 .idea
 /Assets/Plugins.meta
+
+#media
+*.wav

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Threading.Tasks;
 using Calendar.DatePanel;
 using Calendar.InfoPanel;
 using Calendar.InfoPanel.Utils;
@@ -10,9 +9,10 @@ using SpeechKitApi;
 using SpeechKitApi.Enums;
 using SpeechKitApi.Models;
 using SpeechKitApi.Models.TokenResources;
+using SpeechKitApi.Wav;
+using UnityAsyncHelper.Core;
 using UnityEngine;
 using Utils;
-using YandexSpeechKit;
 using YandexSpeechKit.Utils;
 using EventType = Core.EventType;
 
@@ -55,7 +55,8 @@ namespace Calendar
             
             ShowMonth(DateTime.Now);
 
-            //Task.Factory.StartNew(Execute);
+            var path = Application.persistentDataPath;
+            ThreadManager.AsyncExecute(Execute, () => Debug.Log($"Saved at \"{Application.persistentDataPath}\" directory"), path);
         }
         
         private void OnDestroy()
@@ -104,26 +105,24 @@ namespace Calendar
             infoPanelController.UpdateEvents(newCalendarEvent);
         }
         
-        static void Execute()
+        static void Execute(params object[] args)
         {
+            var path = (string) args[0];
             var client = SpeechKitClient.Create(new OAuthToken {Key = ClientParams.OAuthKey});
             
-            var options = new SynthesisOptions("Не забыть сдать Hедельный отчет", 0.75f, ClientParams.YandexCloudFolderId)
+            var options = new SynthesisOptions("Соси жопу", 0.75f, ClientParams.YandexCloudFolderId)
             {
-                Emotion = Emotion.Good,
+                Emotion = Emotion.Evil,
                 Language = SynthesisLanguage.Russian,
                 Quality = SynthesisQuality.High,
                 Speaker = Speaker.Oksana,
                 AudioFormat = SynthesisAudioFormat.Lpcm
             };
-            var byteArray = client.GetSpeech(options).GetAwaiter().GetResult();
-            //client.SaveSpeech(options, $"C:\\tmp").GetAwaiter().GetResult();
+            var rawData = client.GetSpeech(options).GetAwaiter().GetResult();
+            WavConverter.Convert(in rawData, in options, path);
             
             client.Dispose();
-            //ThreadManager.ExecuteOnMainThread(()=> AudioConverter.Execute(byteArray, options));
         }
-
-        
     }
 }
 

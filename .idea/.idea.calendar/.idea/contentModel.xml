@@ -47,7 +47,6 @@
           </e>
           <e p="Core" t="Include">
             <e p="EventManager.cs" t="Include" />
-            <e p="ThreadManager.cs" t="Include" />
           </e>
           <e p="Data" t="Include">
             <e p="calendar" t="Include">

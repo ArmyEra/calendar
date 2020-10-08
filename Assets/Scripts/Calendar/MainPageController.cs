@@ -109,8 +109,8 @@ namespace Calendar
         {
             var path = (string) args[0];
             var client = SpeechKitClient.Create(new OAuthToken {Key = ClientParams.OAuthKey});
-            
-            var options = new SynthesisOptions("Соси жопу", 0.75f, ClientParams.YandexCloudFolderId)
+
+            var externalOptions = new SynthesisExternalOptions
             {
                 Emotion = Emotion.Evil,
                 Language = SynthesisLanguage.Russian,
@@ -118,8 +118,16 @@ namespace Calendar
                 Speaker = Speaker.Oksana,
                 AudioFormat = SynthesisAudioFormat.Lpcm
             };
-            var rawData = client.GetSpeech(options).GetAwaiter().GetResult();
-            WavConverter.Convert(in rawData, in options, path);
+
+            var optionsArray = SynthesisOptions.Create(
+                new [] {"Соси жопу", "А можешь и не жопу :-)"},
+                externalOptions,
+                ClientParams.YandexCloudFolderId
+            ).ToArray();
+            
+            var dataArray = client.GetMultipleSpeech(optionsArray).GetAwaiter().GetResult();
+            for(var i = 0; i < dataArray.Length; i++)
+                WavConverter.Convert(in dataArray[i], in optionsArray[i], path);
             
             client.Dispose();
         }

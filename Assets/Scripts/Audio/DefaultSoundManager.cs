@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using Audio.Utils;
@@ -16,29 +17,30 @@ namespace Audio
 {
     public class DefaultSoundManager: Singleton<DefaultSoundManager>
     {
-        private readonly Dictionary<string, AudioClip> _soundDictionary = new Dictionary<string, AudioClip>();
+        public static readonly Dictionary<DefaultSoundType, AudioClip> SoundDictionary = new Dictionary<DefaultSoundType, AudioClip>();
         private readonly List<string> _awaitGeneration = new List<string>();
         
-        private bool _awaitDownload = true;
+        private bool _awaitInvoke = true;
         private bool _componentsInitialized;
-        private WaitUntil _anyAwaitGeneration;
 
         /// <summary>
         /// Инициализация. Запускет загрузку существующих айдио в словарь
         /// </summary>
-        public void Initialize()
+        public bool Initialize()
         {
             EventManager.AddHandler(EventType.YandexClientCreated, SpeechKitClientCallback);
             
-            _anyAwaitGeneration = new WaitUntil(()=> _awaitGeneration.Count > 0);
             var defaultTexts = Enum.GetValues(typeof(DefaultSoundType))
                 .Cast<DefaultSoundType>()
-                .Select(v => v.GetEnumString());
+                .Select(v => v.GetEnumString())
+                .Where(v => v != null);
             DownloadSounds(defaultTexts, AudioParams.DefaultSoundsGenerateFolder);
 
-            _componentsInitialized = true;
+            return (_componentsInitialized = true);
         }
 
+        #region SOUND LOAD
+        
         /// <summary>
         /// Callback события подключение к API
         /// </summary>
@@ -53,7 +55,9 @@ namespace Audio
         public void OnDestroy()
         {
             EventManager.RemoveHandler(EventType.YandexClientCreated, SpeechKitClientCallback);
-            _awaitDownload = false;
+            SoundDictionary.Clear();
+            _awaitInvoke = false;
+            StopAllCoroutines();
         }
         
         /// <summary>
@@ -67,16 +71,18 @@ namespace Audio
                 var fullPath = $"{Path.Combine(path, text.GetValidPathString())}.wav";
                 if (File.Exists(fullPath))
                 {
-                    if (_soundDictionary.ContainsKey(text))
+                    var defaultSoundType = text.GetEnumElementByName<DefaultSoundType>();
+                    
+                    if (SoundDictionary.ContainsKey(defaultSoundType))
                         continue;
 
                     void SaveToDictionary(AudioClip clip)
                     {
-                        if (_soundDictionary.ContainsKey(text))
+                        if (SoundDictionary.ContainsKey(defaultSoundType))
                             return;
 
-                        _soundDictionary.Add(text, clip);
-
+                        SoundDictionary.Add(defaultSoundType, clip);
+                        
                         if (!cashDisabled)
                             _awaitGeneration.Remove(text);
                     }
@@ -95,9 +101,9 @@ namespace Audio
         {
             yield return new WaitUntil(() => _componentsInitialized);
             
-            while (_awaitDownload)
+            while (_awaitInvoke)
             {
-                yield return _anyAwaitGeneration;
+                yield return new WaitUntil(_awaitGeneration.Any);
                 
                 void CallBackDownload()
                     => DownloadSounds(_awaitGeneration, AudioParams.DefaultSoundsGenerateFolder, false);
@@ -110,5 +116,7 @@ namespace Audio
                     AudioParams.DefaultSoundsGenerateFolder);
             }
         }
+
+        #endregion
     }
 }

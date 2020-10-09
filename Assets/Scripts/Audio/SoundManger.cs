@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using Audio.ClipQueue;
 using Audio.Utils;
 using Calendar.InfoPanel.Utils;
 using Data.Calendar;
@@ -19,11 +21,85 @@ namespace Audio
 {
     public class SoundManger : Singleton<SoundManger>, IStartable
     {
+        [SerializeField] private AudioSource defaultSource;
+        
+        private readonly Queue<IClipQueueInfo> _clipQueueInfos = new Queue<IClipQueueInfo>();
+        private bool _awaitInvoke = true;
+        
+        //ToDo: Создание карутины ожидания выполнения
+        //ToDo: Вызов дефолтного события
         public void OnStart()
         {
             DefaultSoundManager.Instance.Initialize();
+            HolidaySoundManager.Instance.Initialize();
+
+            StartCoroutine(PlayQueued());
+        }
+        
+        public void OnDestroy()
+        {
+            _awaitInvoke = false;
+            StopAllCoroutines();
+            _clipQueueInfos.Clear();
         }
 
+        /// <summary>
+        /// Проигрывает из очереди все звуки 
+        /// </summary>
+        private IEnumerator PlayQueued()
+        {
+            while (_awaitInvoke)
+            {
+                print("Awaiting for sound play request");
+                yield return new WaitUntil(_clipQueueInfos.Any);
+                
+                print("Have request");
+
+                var info = _clipQueueInfos.Dequeue();
+                var clip = info.CheckClip(out var success);
+                if (!success)
+                {
+                    print("Sound still not loaded. Awaiting...");
+                    yield return new WaitUntil(() => WaitClipLoaded(Time.time, info));
+                    clip = info.Clip;
+                    print($"Awaiting ended. Result: {clip != null}");
+                }
+
+                if (clip != null)
+                {
+                    print("Start playing clip.");
+                    var clipLenght = Play(clip);
+                    yield return new WaitForSeconds(clipLenght);
+                }
+                
+                print("Dispose clip");
+                info.Dispose();
+            }
+        }
+        
+        /// <summary>
+        /// Функция флага ожидания загрузки клипа 
+        /// </summary>
+        private bool WaitClipLoaded(float startTime, IClipQueueInfo info)
+        {
+            return info.ClipLoaded || Time.time > startTime + Params.TIME_SOUND_AWAIT;
+        }
+
+        #region STATIC EVENTS
+
+        public static float Play(AudioClip clip)
+        {
+            Instance.defaultSource.clip = clip;
+            Instance.defaultSource.Play();
+            
+            return clip.length;
+        }
+
+        public static void PlayQueued(DefaultSoundType soundType)
+        {
+            var queuedSoundInfo = new ClipQueueInfo(soundType);
+            Instance._clipQueueInfos.Enqueue(queuedSoundInfo);
+        }
         
         /// <summary>
         /// Генерирует звук и сохраняет в файл 
@@ -92,5 +168,7 @@ namespace Audio
                 }
             }
         }
+
+        #endregion
     }
 }

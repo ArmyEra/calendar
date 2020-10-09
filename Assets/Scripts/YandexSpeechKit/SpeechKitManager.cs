@@ -42,7 +42,7 @@ namespace YandexSpeechKit
 
         private void OnDestroy()
         {
-            Client.Dispose();
+            Client?.Dispose();
         }
     }
 }

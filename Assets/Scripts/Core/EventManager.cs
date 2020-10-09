@@ -10,6 +10,10 @@ namespace Core
     {
         YandexClientCreated,
         
+        DefaultSoundLoaded,
+        HolidaySoundLoaded,
+        TranslatedSoundLoaded,
+        
         OnDateChanged,
         OnCalendarEventTypeChanged,
         

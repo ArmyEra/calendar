@@ -7,6 +7,11 @@ namespace Audio.Utils
     public static class Params
     {
         /// <summary>
+        /// Время ожидания звука в очереди
+        /// </summary>
+        public const float TIME_SOUND_AWAIT = 3f;
+        
+        /// <summary>
         /// Общий каталог сохранения звука
         /// </summary>
         public static readonly string SoundGenerateFolder = $"{Application.dataPath}\\Audio";

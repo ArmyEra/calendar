@@ -28,8 +28,6 @@ namespace Calendar.DatePanel
                 GetItemSize();
             
             SetItems(monthDate, startIndex, finalIndex);
-            // print(startIndex.GetTotalIndex(Params.GridSize));
-            // print(finalIndex.GetTotalIndex(Params.GridSize));
         }
 
         private void GetItemSize()

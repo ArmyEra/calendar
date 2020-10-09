@@ -5,7 +5,6 @@ using Calendar.InfoPanel.Utils;
 using Data.Calendar;
 using Extensions;
 using UnityEngine;
-using Utils;
 
 namespace Calendar.InfoPanel
 {
@@ -13,7 +12,7 @@ namespace Calendar.InfoPanel
     {
         [SerializeField] private ViewInfoController viewInfoController;
         [SerializeField] private TabsController tabsController;
-        
+
         private DateTime _monthDate;
         private readonly List<CalendarEventData> _monthEvents = new List<CalendarEventData>();
         
@@ -24,8 +23,8 @@ namespace Calendar.InfoPanel
             _monthEvents.Clear();
             _monthEvents.AddRange(monthEvents);
             
-            tabsController.SetTabsVisible(_monthEvents.GetAvailableTypes());
-            viewInfoController.ShowInfo(MainPageController.ActiveDate, MainPageController.ActiveCalendarEventType);
+            viewInfoController.Initialize();
+            tabsController.Initialize();
         }
 
         public void UpdateEvents(CalendarEventData dataEvent)
@@ -33,10 +32,17 @@ namespace Calendar.InfoPanel
             _monthEvents.Add(dataEvent);
         }
 
+        
+        /// <summary>
+        /// Возвращает события на конкретную дату 
+        /// </summary>
+        public IEnumerable<CalendarEventData> GetDayEventDatas(DateTime date)
+            => _monthEvents.GetTodayEvents(date);
+        
         /// <summary>
         /// Возвращает типизированные события на конкретную дату
         /// </summary>
         public IEnumerable<CalendarEventData> GetDayTypedEventDatas(DateTime date, CalendarEventTypes calendarEventType)
-            => _monthEvents.GetTodayEvents(date).GetTypedEvents(calendarEventType);
+            => GetDayEventDatas(date).GetTypedEvents(calendarEventType);
     }
 }

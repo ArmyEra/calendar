@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using Audio.CashedSounds.Default;
+using Audio.CashedSounds.Default.Utils;
+using Audio.CashedSounds.Holiday;
 using Audio.ClipQueue;
 using Audio.Utils;
 using Calendar.InfoPanel.Utils;
@@ -26,8 +29,6 @@ namespace Audio
         private readonly Queue<IClipQueueInfo> _clipQueueInfos = new Queue<IClipQueueInfo>();
         private bool _awaitInvoke = true;
         
-        //ToDo: Создание карутины ожидания выполнения
-        //ToDo: Вызов дефолтного события
         public void OnStart()
         {
             DefaultSoundManager.Instance.Initialize();
@@ -50,29 +51,22 @@ namespace Audio
         {
             while (_awaitInvoke)
             {
-                print("Awaiting for sound play request");
                 yield return new WaitUntil(_clipQueueInfos.Any);
                 
-                print("Have request");
-
                 var info = _clipQueueInfos.Dequeue();
                 var clip = info.CheckClip(out var success);
                 if (!success)
                 {
-                    print("Sound still not loaded. Awaiting...");
                     yield return new WaitUntil(() => WaitClipLoaded(Time.time, info));
                     clip = info.Clip;
-                    print($"Awaiting ended. Result: {clip != null}");
                 }
 
                 if (clip != null)
                 {
-                    print("Start playing clip.");
                     var clipLenght = Play(clip);
                     yield return new WaitForSeconds(clipLenght);
                 }
                 
-                print("Dispose clip");
                 info.Dispose();
             }
         }
@@ -97,7 +91,7 @@ namespace Audio
 
         public static void PlayQueued(DefaultSoundType soundType)
         {
-            var queuedSoundInfo = new ClipQueueInfo(soundType);
+            var queuedSoundInfo = new DefaultClipQueueInfo(soundType);
             Instance._clipQueueInfos.Enqueue(queuedSoundInfo);
         }
         
@@ -136,15 +130,13 @@ namespace Audio
             if(eventData.clip != null)
                 return;
 
-            var filePath = Params.SoundPath(eventData.SourceId);
+            var filePath = Params.HolidaySoundPath(eventData.SourceId);
             if (File.Exists(filePath))
             {
                 void SetClip(AudioClip loadedClip)
                 {
-                    Debug.Log("Clip received!");
                     eventData.clip = loadedClip;
                 }
-
                 Instance.StartCoroutine(LoadClip(filePath, SetClip));
                 return;
             }

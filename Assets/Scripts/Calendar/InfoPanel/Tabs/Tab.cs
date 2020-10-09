@@ -11,6 +11,8 @@ namespace Calendar.InfoPanel.Tabs
     {
         public CalendarEventTypes calendarEventType;
 
+        public bool IsVisible { get; private set; } = true;
+        
         private Button _button;
         private string _typeDescription;
         
@@ -38,6 +40,7 @@ namespace Calendar.InfoPanel.Tabs
         /// </summary>
         public void SetVisible(bool value)
         {
+            IsVisible = value;
             gameObject.SetActive(value);  
         }
 

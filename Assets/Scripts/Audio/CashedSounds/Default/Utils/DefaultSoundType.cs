@@ -1,6 +1,6 @@
 ﻿using SpeechKitApi.Attributes;
 
-namespace Audio.Utils
+namespace Audio.CashedSounds.Default.Utils
 {
     public enum DefaultSoundType
     {

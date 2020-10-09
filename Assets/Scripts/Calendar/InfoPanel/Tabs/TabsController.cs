@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Calendar.InfoPanel.Utils;
+using Core;
+using Extensions;
 using UnityEngine;
+using EventType = Core.EventType;
 
 namespace Calendar.InfoPanel.Tabs
 {
@@ -9,32 +13,71 @@ namespace Calendar.InfoPanel.Tabs
     {
         [SerializeField] private Tab[] tabs;
 
-        private void Start()
-        {
-            Initialize();
-        }
+        private InfoPanelController InfoPanelController
+            => _infoPanelController == null
+                ? _infoPanelController = GetComponentInParent<InfoPanelController>()
+                : _infoPanelController; 
+        private InfoPanelController _infoPanelController;
+        
+        private bool _startInitialized;
 
         /// <summary>
         /// Инциализирует вкладки
         /// </summary>
-        private void Initialize()
+        public void Initialize()
         {
+            InitializeOnStart();
+        }
+
+        private void InitializeOnStart()
+        {
+            if(_startInitialized)
+                return;
+
+            EventManager.AddHandler(EventType.OnDateChanged, OnDayChanged);
+            
             foreach (var tab in tabs)
                 tab.Initialize();
             
-            tabs.First(t => t.calendarEventType == CalendarEventTypes.MilitaryMemoryDay)
-                .OnClickAction();
+            InvokeFirstClick();
+            
+            _startInitialized = true;
+        }
+
+        private void OnDestroy()
+        {
+            EventManager.RemoveHandler(EventType.OnDateChanged, OnDayChanged);
+        }
+
+        /// <summary>
+        /// Перехватывает событие при изменении дня 
+        /// </summary>
+        private void OnDayChanged(params object[] args)
+        {
+            var date = (DateTime) args[0];
+            var eventTypes = InfoPanelController
+                .GetDayEventDatas(date)
+                .GetAvailableTypes();
+            
+            SetTabsVisible(eventTypes);
         }
 
         /// <summary>
         /// Устанавливает видимость вкладки 
         /// </summary>
-        public void SetTabsVisible(IEnumerable<CalendarEventTypes> existedEventTypes)
+        private void SetTabsVisible(IEnumerable<CalendarEventTypes> existedEventTypes)
         {
+            //_monthEvents.GetAvailableTypes()
             foreach (var tab in tabs.Where(t => t.calendarEventType != CalendarEventTypes.Notes))
-            {
                 tab.SetVisible(existedEventTypes.Any(et => et == tab.calendarEventType));
-            }
+
+            InvokeFirstClick();
+        }
+
+        private void InvokeFirstClick()
+        {
+            tabs.First(t => t.IsVisible)
+                .OnClickAction();
         }
     }
 }

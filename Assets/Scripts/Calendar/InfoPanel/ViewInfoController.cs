@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using Audio;
+using Audio.CashedSounds.Default.Utils;
 using Calendar.InfoPanel.Utils;
 using Core;
 using Data.Calendar;
@@ -32,11 +35,23 @@ namespace Calendar.InfoPanel
                 : _infoPanelController; 
         private InfoPanelController _infoPanelController;
 
-        private void Start()
-        {   
+        private bool _startInitialized;
+
+        public void Initialize()
+        {
+            OnStartInitialize();
+        }
+
+        private void OnStartInitialize()
+        {
+            if (_startInitialized)
+                return;
+            
             EventManager.AddHandler(EventType.OnDateChanged, OnDayChanged);
             EventManager.AddHandler(EventType.OnCalendarEventTypeChanged, OnCalendarTypeChanged);
             EventManager.AddHandler(EventType.CalendarEventAdd, UpdateInfo);
+
+            _startInitialized = true;
         }
 
         private void OnDestroy()
@@ -51,7 +66,9 @@ namespace Calendar.InfoPanel
         /// </summary>
         private void OnDayChanged(params object[] args)
         {
-            ShowInfo((DateTime) args[0], MainPageController.ActiveCalendarEventType);
+            var date = (DateTime) args[0];
+            OnDayOrCalendarTypeChanged(date, MainPageController.ActiveCalendarEventType);
+            PlayDayEvents(date);
         }
         
         /// <summary>
@@ -60,20 +77,41 @@ namespace Calendar.InfoPanel
         private void OnCalendarTypeChanged(params object[] args)
         {
             title.text = (string) args[1];
-            ShowInfo(MainPageController.ActiveDate, (CalendarEventTypes) args[0]);
+            OnDayOrCalendarTypeChanged(MainPageController.ActiveDate, (CalendarEventTypes) args[0]);
         }
 
-        /// <summary>
-        /// Выводит информацию на текущую дату по текущему типу событий 
-        /// </summary>
-        public void ShowInfo(DateTime date, CalendarEventTypes calendarEventType)
+        private void OnDayOrCalendarTypeChanged(DateTime date, CalendarEventTypes calendarEventType)
         {
             if(date.IsNull() || calendarEventType == CalendarEventTypes.Null)
                 return;
 
-            DropItems();
+            var calendarEvents = InfoPanelController
+                .GetDayTypedEventDatas(date, calendarEventType)
+                .ToArray();
             
-            var calendarEvents = InfoPanelController.GetDayTypedEventDatas(date, calendarEventType);
+            ShowInfo(calendarEvents);
+        }
+        
+        #region SOUND PLAY
+
+        private void PlayDayEvents(DateTime date)
+        {
+            var calendarEvents = InfoPanelController.GetDayEventDatas(date);
+            
+            if(calendarEvents.Any(ev => ev.calendarEventType == CalendarEventTypes.Notes))
+                SoundManger.PlayQueued(DefaultSoundType.ScheduledEvent);
+        }
+        
+        #endregion
+        
+        #region INFO UPDATE
+
+        /// <summary>
+        /// Выводит информацию на текущую дату по текущему типу событий 
+        /// </summary>
+        private void ShowInfo(IEnumerable<CalendarEventData> calendarEvents)
+        {
+            DropItems();
             foreach (var calendarEvent in calendarEvents)
                 GenerateInfo(calendarEvent);
             
@@ -157,5 +195,7 @@ namespace Calendar.InfoPanel
             _generatedObjects.Clear();
             _lastPosition = Vector2.zero;
         }
+
+        #endregion
     }
 }

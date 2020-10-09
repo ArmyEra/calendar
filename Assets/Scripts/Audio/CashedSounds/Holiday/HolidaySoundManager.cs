@@ -2,7 +2,7 @@
 using UnityEngine;
 using Utils;
 
-namespace Audio
+namespace Audio.CashedSounds.Holiday
 {
     public class HolidaySoundManager : Singleton<HolidaySoundManager>
     {

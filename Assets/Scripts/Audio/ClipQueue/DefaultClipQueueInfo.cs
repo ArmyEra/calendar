@@ -1,13 +1,14 @@
 ﻿using System;
-using System.Collections;
-using Audio.ClipQueue;
+using Audio.CashedSounds.Default;
+using Audio.CashedSounds.Default.Utils;
+using Audio.Utils;
 using Core;
 using UnityEngine;
 using EventType = Core.EventType;
 
-namespace Audio.Utils
+namespace Audio.ClipQueue
 {
-    public class ClipQueueInfo: IClipQueueInfo
+    public class DefaultClipQueueInfo: IClipQueueInfo
     {
         private readonly DefaultSoundType _soundType;
         public bool ClipLoaded { get; private set; }
@@ -23,7 +24,7 @@ namespace Audio.Utils
             }
         }
 
-        public ClipQueueInfo(DefaultSoundType soundType)
+        public DefaultClipQueueInfo(DefaultSoundType soundType)
         {
             if(soundType == DefaultSoundType.Null)
                 throw new Exception("It's impossible to generate ClipQueueInfo from \"DefaultSoundType.Null\"");

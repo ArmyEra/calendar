@@ -20,15 +20,24 @@
             <e p="EnumValueStringAttribute.cs" t="Include" />
           </e>
           <e p="Audio" t="Include">
+            <e p="CashedSounds" t="Include">
+              <e p="Default" t="Include">
+                <e p="DefaultSoundManager.cs" t="Include" />
+                <e p="Utils" t="Include">
+                  <e p="DayTimeSoundManager.cs" t="Include" />
+                  <e p="DefaultSoundType.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Holiday" t="Include">
+                <e p="HolidaySoundManager.cs" t="Include" />
+              </e>
+            </e>
             <e p="ClipQueue" t="Include">
+              <e p="DefaultClipQueueInfo.cs" t="Include" />
               <e p="IClipQueueInfo.cs" t="Include" />
             </e>
-            <e p="DefaultSoundManager.cs" t="Include" />
-            <e p="HolidaySoundManager.cs" t="Include" />
             <e p="SoundManger.cs" t="Include" />
             <e p="Utils" t="Include">
-              <e p="ClipQueueInfo.cs" t="Include" />
-              <e p="DefaultSoundType.cs" t="Include" />
               <e p="Params.cs" t="Include" />
             </e>
           </e>

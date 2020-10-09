@@ -108,7 +108,7 @@ namespace Data.Calendar
             DateTime = stringDate.GetDateTime();
             
             SourceId = GenerateSourceId(this);
-            Directory.CreateDirectory(Params.SoundPath(SourceId));
+            Directory.CreateDirectory(Params.HolidaySoundPath(SourceId));
         }
 
         /// <summary>

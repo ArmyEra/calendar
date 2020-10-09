@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using Audio;
-using Audio.Utils;
+using Audio.CashedSounds.Default.Utils;
 using Calendar.DatePanel;
 using Calendar.InfoPanel;
 using Calendar.InfoPanel.Utils;
@@ -12,7 +10,6 @@ using Data.Calendar;
 using Extensions;
 using OrderExecuter;
 using UnityEngine;
-using Utils;
 using EventType = Core.EventType;
 
 namespace Calendar
@@ -45,6 +42,8 @@ namespace Calendar
         
         public void OnStart()
         {
+            PlayHello();
+            
             holidayCalendarEvents.Initialize();
             scheduledCalendarEvents.Initialize();
             
@@ -53,8 +52,6 @@ namespace Calendar
             EventManager.AddHandler(EventType.CalendarEventAdd, OnCalendarEventAdd);
             
             ShowMonth(DateTime.Now);
-
-            //StartCoroutine(PlaySoundTest());
         }
         
         private void OnDestroy()
@@ -69,11 +66,12 @@ namespace Calendar
         /// </summary>
         private void ShowMonth(DateTime date)
         {
-            datePanelController.Initialize(date);
             var monthEvents = holidayCalendarEvents.datas.GetMonthEvents(date)
                 .Concat(scheduledCalendarEvents.datas.GetMonthEvents(date))
                 .ToArray();
             infoPanelController.Initialize(date, monthEvents);
+            
+            datePanelController.Initialize(date);
         }
 
         /// <summary>
@@ -103,12 +101,13 @@ namespace Calendar
             infoPanelController.UpdateEvents(newCalendarEvent);
         }
 
-
-        private IEnumerator PlaySoundTest()
+        /// <summary>
+        /// Воспроизвести Приветствие 
+        /// </summary>
+        private void PlayHello()
         {
-            yield return new WaitForSeconds(Params.TIME_SOUND_AWAIT);
-            
-            SoundManger.PlayQueued(DefaultSoundType.ScheduledEvent);
+            var soundType = DayTimeSoundManager.GetGreetingSoundType();
+            SoundManger.PlayQueued(soundType);
         }
     }
 }

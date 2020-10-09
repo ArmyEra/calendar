@@ -16,16 +16,31 @@ namespace Audio.Utils
         /// </summary>
         public static readonly string SoundGenerateFolder = $"{Application.dataPath}\\Audio";
 
+
+        #region RESOURCES
+
+        /// <summary>
+        /// Каталог Resources
+        /// </summary>
+        public static readonly string ResourcesFolder = $"{Application.dataPath}\\Resources";
+
+        /// <summary>
+        /// Путь к дефолтным звукам в Resources
+        /// </summary>
+        public const string DEFAULT_SOUNDS_SUB_PATH = "Audio\\Default";
+        
         /// <summary>
         /// Каталог сохранения дефолтных звуков
         /// </summary>
-        public static readonly string DefaultSoundsGenerateFolder = $"{SoundGenerateFolder}\\Default";
+        public static readonly string DefaultSoundsGenerateFolder = $"{ResourcesFolder}\\{DEFAULT_SOUNDS_SUB_PATH}";
         
         /// <summary>
-        /// Каталог звука конкретного события 
+        /// Каталог звука конкретного праздника
         /// </summary>
-        public static string SoundPath(string sourceId) => $"{SoundGenerateFolder}\\{sourceId}";
+        public static string HolidaySoundPath(string sourceId) => $"{ResourcesFolder}\\Audio\\{sourceId}";
 
+        #endregion
+        
         public static readonly SynthesisExternalOptions DefaultExternalOptions = new SynthesisExternalOptions
         {
             Emotion = Emotion.Good,

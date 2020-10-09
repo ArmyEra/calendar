@@ -32,7 +32,6 @@ namespace YandexSpeechKit
             void InitializeCallback(object[] args)
             {
                 Client = (SpeechKitClient) args[0];
-                Debug.Log("Authorized!");
                 
                 EventManager.RaiseEvent(EventType.YandexClientCreated);
             }

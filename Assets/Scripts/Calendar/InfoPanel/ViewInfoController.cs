@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Audio;
 using Audio.CashedSounds.Default.Utils;
+using Calendar.DatePanel;
 using Calendar.InfoPanel.Utils;
+using Calendar.Utils;
 using Core;
 using Data.Calendar;
 using Extensions;
@@ -16,6 +18,12 @@ namespace Calendar.InfoPanel
 {
     public class ViewInfoController : MonoBehaviour
     {
+        private static UniqEventInfo _lastSetUniqEventInfo = new UniqEventInfo
+        {
+            Date = DateTime.MinValue,
+            CalendarEventType = CalendarEventTypes.Null
+        };
+        
         [SerializeField] private Text title;
 
         [Header("Scroll view settings")] 
@@ -67,8 +75,13 @@ namespace Calendar.InfoPanel
         private void OnDayChanged(params object[] args)
         {
             var date = (DateTime) args[0];
-            OnDayOrCalendarTypeChanged(date, MainPageController.ActiveCalendarEventType);
-            PlayDayEvents(date);
+            OnDayOrCalendarTypeChanged(new UniqEventInfo
+            {
+                Date = date,
+                CalendarEventType = MainPageController.ActiveInfo.CalendarEventType
+            });
+            
+            PlayNodeEvents(date);
         }
         
         /// <summary>
@@ -77,31 +90,61 @@ namespace Calendar.InfoPanel
         private void OnCalendarTypeChanged(params object[] args)
         {
             title.text = (string) args[1];
-            OnDayOrCalendarTypeChanged(MainPageController.ActiveDate, (CalendarEventTypes) args[0]);
+            OnDayOrCalendarTypeChanged(new UniqEventInfo
+            {
+                Date = MainPageController.ActiveInfo.Date,
+                CalendarEventType = (CalendarEventTypes) args[0]
+            });
         }
 
-        private void OnDayOrCalendarTypeChanged(DateTime date, CalendarEventTypes calendarEventType)
+        /// <summary>
+        /// При изменении дня и типа выводимой информации
+        /// </summary>
+        private void OnDayOrCalendarTypeChanged(UniqEventInfo uniqEventInfo)
         {
-            if(date.IsNull() || calendarEventType == CalendarEventTypes.Null)
+            if(!uniqEventInfo.IsValidate || uniqEventInfo.Equals(_lastSetUniqEventInfo))
                 return;
 
+            _lastSetUniqEventInfo = uniqEventInfo;
+            
             var calendarEvents = InfoPanelController
-                .GetDayTypedEventDatas(date, calendarEventType)
+                .GetDayTypedEventDatas(_lastSetUniqEventInfo.Date, _lastSetUniqEventInfo.CalendarEventType)
                 .ToArray();
             
             ShowInfo(calendarEvents);
+            PlayHolidayEvents(_lastSetUniqEventInfo.Date, calendarEvents);
         }
         
         #region SOUND PLAY
 
-        private void PlayDayEvents(DateTime date)
+        /// <summary>
+        /// Воспроизводит, существуют ли заметки
+        /// </summary>
+        private void PlayNodeEvents(DateTime date)
         {
             var calendarEvents = InfoPanelController.GetDayEventDatas(date);
-            
-            if(calendarEvents.Any(ev => ev.calendarEventType == CalendarEventTypes.Notes))
-                SoundManger.PlayQueued(DefaultSoundType.ScheduledEvent);
+
+            if (calendarEvents.Any(ev => ev.calendarEventType == CalendarEventTypes.Notes))
+            {
+                var intoSound = DateTimeSoundManager.GetInto(date);
+                SoundManger.PlayQueued(intoSound, DefaultSoundType.ScheduledEvent);
+            }
         }
-        
+
+        /// <summary>
+        /// Воспроизводит Типизированные события в конкртеную дату
+        /// </summary>
+        private static void PlayHolidayEvents(DateTime date, in CalendarEventData[] calendarEvents)
+        {
+            if(calendarEvents.Length == 0)
+                return;
+            
+            if(calendarEvents.GetAvailableTypes().All(t => t == CalendarEventTypes.Notes))
+                return;
+            
+            SoundManger.PlayQueued(DateTimeSoundManager.GetInto(date), DefaultSoundType.HolidayProcess);
+            SoundManger.PlayQueued(calendarEvents);
+        }
         #endregion
         
         #region INFO UPDATE

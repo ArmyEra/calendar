@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 
 namespace Audio.ClipQueue
@@ -9,6 +8,7 @@ namespace Audio.ClipQueue
         AudioClip Clip { get; }
         
         bool ClipLoaded { get; }
+        
 
         AudioClip CheckClip(out bool success);
     }

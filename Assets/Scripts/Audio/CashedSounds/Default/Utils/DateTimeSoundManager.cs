@@ -2,7 +2,7 @@
 
 namespace Audio.CashedSounds.Default.Utils
 {
-    public static class DayTimeSoundManager
+    public static class DateTimeSoundManager
     {
         private const int MORNING_HOUR = 4;
         private const int AFTERNOON_HOUR = 11;
@@ -26,6 +26,16 @@ namespace Audio.CashedSounds.Default.Utils
                 return DefaultSoundType.GoodEvening;
 
             return DefaultSoundType.GoodNight;
+        }
+
+        /// <summary>
+        /// Возвращает вступление перед другим голосвым сообщением в зависимости от дня ("Сегодня" или "В этот день") 
+        /// </summary>
+        public static DefaultSoundType GetInto(DateTime date)
+        {
+            return date.Date == DateTime.Now.Date
+                ? DefaultSoundType.Today
+                : DefaultSoundType.ThisDay;
         }
     }
 }

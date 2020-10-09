@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using Audio.CashedSounds.Default.Utils;
 using Core;
+using SpeechKitApi.Models;
 using SpeechKitApi.Utils;
 using UnityAsyncHelper.Core;
 using UnityEngine;
@@ -18,10 +19,8 @@ namespace Audio.CashedSounds.Default
     {
         public static readonly Dictionary<DefaultSoundType, AudioClip> SoundDictionary = new Dictionary<DefaultSoundType, AudioClip>();
         private readonly List<string> _awaitGeneration = new List<string>();
-        private readonly List<string> _loadingFromResources = new List<string>();
         
         private bool _awaitInvoke = true;
-        private bool _componentsInitialized;
 
         /// <summary>
         /// Инициализация. Запускет загрузку существующих айдио в словарь
@@ -31,17 +30,11 @@ namespace Audio.CashedSounds.Default
 #if UNITY_EDITOR
             EventManager.AddHandler(EventType.YandexClientCreated, SpeechKitClientCallback);
 #endif
-            
+
             var defaultTexts = Enum.GetValues(typeof(DefaultSoundType))
-                .Cast<DefaultSoundType>()
-                .Select(v => v.GetEnumString())
-                .Where(v => v != null);
-            DownloadSounds(defaultTexts, AudioParams.DEFAULT_SOUNDS_SUB_PATH);
-
-            _componentsInitialized = true;
+                .Cast<DefaultSoundType>();
+            DownloadSoundsFromResources(defaultTexts, AudioParams.DEFAULT_SOUNDS_SUB_PATH);
         }
-
-        #region SOUND LOAD
 
 #if UNITY_EDITOR
         /// <summary>
@@ -49,7 +42,10 @@ namespace Audio.CashedSounds.Default
         /// </summary>
         private void SpeechKitClientCallback(params object[] args)
         {
-            StartCoroutine(DownloadSoundsFromInternet());
+            StartCoroutine(
+                DownloadSoundsFromInternet(
+                    AudioParams.DefaultExternalOptions, 
+                    AudioParams.DefaultSoundsFolder));
         }
 #endif
         
@@ -66,15 +62,19 @@ namespace Audio.CashedSounds.Default
             StopAllCoroutines();
         }
         
-        private void DownloadSounds(IEnumerable<string> texts, string resourcesSubPath, bool needCashSpeech = true)
+        /// <summary>
+        /// Вызывается один раз для загрузки звука из Resources 
+        /// </summary>
+        private void DownloadSoundsFromResources(IEnumerable<DefaultSoundType> soundTypes, string resourcesSubPath)
         {
-            foreach (var text in texts)
+            foreach (var soundType in soundTypes)
             {
+                var text = soundType.GetEnumString();
+                
                 var fullResourceName = $"{resourcesSubPath}\\{text.GetValidPathString()}";
                 fullResourceName = fullResourceName.Replace('\\', '/');
                 
-                var defaultSoundType = text.GetEnumElementByName<DefaultSoundType>();
-                if(SoundDictionary.ContainsKey(defaultSoundType))
+                if(SoundDictionary.ContainsKey(soundType))
                     continue;
 
                 void SaveToDictionary(AsyncOperation asyncOperation)
@@ -83,16 +83,15 @@ namespace Audio.CashedSounds.Default
                     
                     if (!asyncOperation.isDone || asset == null)
                     {
-                        if (needCashSpeech)
-                            _awaitGeneration.Add(text);
+                        _awaitGeneration.Add(text);
                         return;
                     }
                     
-                    if(SoundDictionary.ContainsKey(defaultSoundType))
+                    if(SoundDictionary.ContainsKey(soundType))
                         return;
 
-                    SoundDictionary.Add(defaultSoundType, (AudioClip) asset);
-                    EventManager.RaiseEvent(EventType.DefaultSoundLoaded, defaultSoundType);
+                    SoundDictionary.Add(soundType, (AudioClip) asset);
+                    EventManager.RaiseEvent(EventType.DefaultSoundLoaded, soundType);
                 }
                 
                 var request = Resources.LoadAsync(fullResourceName);
@@ -100,11 +99,10 @@ namespace Audio.CashedSounds.Default
             }
         }
         
-        /// <summary>
-        /// Загрузка звука с диска в словарь
-        /// <param name="cashDisabled">Указывает, необходимо ли кидать в очередь ожидания те, что еще не загружены, или же их нуэно удалить из очереди</param>>
-        /// </summary>
-        // private void DownloadSounds(IEnumerable<string> texts, string path, bool cashDisabled = true)
+        // /// <summary>
+        // /// Вызывается каждый раз после создания Yandex.SpeechKit и сохранения на диск
+        // /// </summary>
+        // private void DownloadSoundsFromDisk(IEnumerable<string> texts, string path)
         // {
         //     foreach (var text in texts)
         //     {
@@ -123,44 +121,40 @@ namespace Audio.CashedSounds.Default
         //
         //                 SoundDictionary.Add(defaultSoundType, clip);
         //                 EventManager.RaiseEvent(EventType.DefaultSoundLoaded, defaultSoundType);
-        //                 
-        //                 if (!cashDisabled)
-        //                     _awaitGeneration.Remove(text);
         //             }
         //
         //             StartCoroutine(SoundManger.LoadClip(fullPath, SaveToDictionary));
         //         }
-        //         else if (cashDisabled)
-        //             _awaitGeneration.Add(text);
         //     }
         // }
 
 #if UNITY_EDITOR
         /// <summary>
-        /// Загрузка с Yandex.SpeechKit. Ожидает, что все что можно было, загружено, и что очередб не пустая 
+        /// Загрузка с Yandex.SpeechKit. Ожидает, что все что можно было, загружено, и что очередь не пустая 
         /// </summary>
-        private IEnumerator DownloadSoundsFromInternet()
+        private IEnumerator DownloadSoundsFromInternet(SynthesisExternalOptions externalOptions, string saveDirectoryPath)
         {
-            yield return new WaitUntil(() => _componentsInitialized);
-            
             while (_awaitInvoke)
             {
                 yield return new WaitUntil(_awaitGeneration.Any);
-                
+
+                var textsToGenerate = _awaitGeneration.ToArray();
                 void CallBackDownload()
-                    => DownloadSounds(_awaitGeneration.ToArray(), AudioParams.DEFAULT_SOUNDS_SUB_PATH, false);
+                {
+                    foreach (var text in textsToGenerate)
+                        Debug.Log($"Sound \"{text}\" downloaded from internet");
+                }
 
                 ThreadManager.AsyncExecute(
                     SoundManger.GenerateSounds,
                     CallBackDownload,
-                    _awaitGeneration.ToArray(),
-                    AudioParams.DefaultExternalOptions,
-                    AudioParams.DefaultSoundsGenerateFolder);
+                    textsToGenerate,
+                    externalOptions,
+                    saveDirectoryPath);
                 
                 _awaitGeneration.Clear();
             }
         }
 #endif
-        #endregion
     }
 }

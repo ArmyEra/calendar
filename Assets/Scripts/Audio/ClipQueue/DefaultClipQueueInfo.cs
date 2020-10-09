@@ -1,7 +1,6 @@
 ﻿using System;
 using Audio.CashedSounds.Default;
 using Audio.CashedSounds.Default.Utils;
-using Audio.Utils;
 using Core;
 using UnityEngine;
 using EventType = Core.EventType;
@@ -26,9 +25,6 @@ namespace Audio.ClipQueue
 
         public DefaultClipQueueInfo(DefaultSoundType soundType)
         {
-            if(soundType == DefaultSoundType.Null)
-                throw new Exception("It's impossible to generate ClipQueueInfo from \"DefaultSoundType.Null\"");
-            
             _soundType = soundType;
         }
 

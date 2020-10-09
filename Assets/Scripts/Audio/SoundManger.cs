@@ -89,10 +89,22 @@ namespace Audio
             return clip.length;
         }
 
-        public static void PlayQueued(DefaultSoundType soundType)
+        public static void PlayQueued(params DefaultSoundType[] soundTypes)
         {
-            var queuedSoundInfo = new DefaultClipQueueInfo(soundType);
-            Instance._clipQueueInfos.Enqueue(queuedSoundInfo);
+            foreach (var soundType in soundTypes)
+            {
+                var queuedSoundInfo = new DefaultClipQueueInfo(soundType);
+                Instance._clipQueueInfos.Enqueue(queuedSoundInfo);    
+            }
+        }
+
+        public static void PlayQueued(params CalendarEventData[] calendarEvents)
+        {
+            foreach (var calendarEvent in calendarEvents)
+            {
+                var queuedSoundInfo = new CalendarClipQueueInfo(calendarEvent);
+                Instance._clipQueueInfos.Enqueue(queuedSoundInfo);
+            }
         }
         
         /// <summary>
@@ -100,9 +112,11 @@ namespace Audio
         /// </summary>
         public static void GenerateSounds(params object[] args)
         {
-            var texts = (IEnumerable<string>) args[0];
+            var texts = (string[]) args[0];
             var externalOptions = (SynthesisExternalOptions) args[1];
             var path = (string) args[2];
+            var sourceIds = args.Length < 4 ? new string[texts.Length] : (string[]) args[3];
+            GeneratingFullSoundPaths(in path, in sourceIds);
             
             var optionsArray = SynthesisOptions.Create(
                 texts,
@@ -112,36 +126,22 @@ namespace Audio
             
             var dataArray = SpeechKitManager.Client.GetMultipleSpeech(optionsArray).GetAwaiter().GetResult();
             for(var i = 0; i < dataArray.Length; i++)
-                WavConverter.Convert(in dataArray[i], in optionsArray[i], path);
+                WavConverter.Convert(in dataArray[i], in optionsArray[i], sourceIds[i]);
         }
-        
-        /// <summary>
-        /// Дополняет в событие звук 
-        /// </summary>
-        public static void GenerateEventDataSound(CalendarEventData eventData)
-        {
-            switch (eventData.calendarEventType)
-            {
-                case CalendarEventTypes.Null:
-                case CalendarEventTypes.Notes:
-                    return;
-            }  
-            
-            if(eventData.clip != null)
-                return;
 
-            var filePath = Params.HolidaySoundPath(eventData.SourceId);
-            if (File.Exists(filePath))
+        /// <summary>
+        /// Генерирует массив дирректорий к файлам 
+        /// </summary>
+        private static void GeneratingFullSoundPaths(in string basePath, in string[] sourceIds)
+        {
+            for (var i = 0; i < sourceIds.Length; i++)
             {
-                void SetClip(AudioClip loadedClip)
-                {
-                    eventData.clip = loadedClip;
-                }
-                Instance.StartCoroutine(LoadClip(filePath, SetClip));
-                return;
+                sourceIds[i] = string.IsNullOrEmpty(sourceIds[i])
+                    ? basePath
+                    : Path.Combine(basePath, $"{sourceIds[i]}.wav");
             }
         }
-
+        
         /// <summary>
         /// Загрузка клипа с диска и передача его в Callback-функцию
         /// </summary>
@@ -155,7 +155,7 @@ namespace Audio
                     Debug.Log(www.error);
                 else
                 {
-                    Debug.Log($"Coroutine: clip from path \"{filePath}\" loaded");
+                    //Debug.Log($"Coroutine: clip from path \"{filePath}\" loaded");
                     callback.Invoke(DownloadHandlerAudioClip.GetContent(www));
                 }
             }

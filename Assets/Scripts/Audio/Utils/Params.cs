@@ -22,23 +22,34 @@ namespace Audio.Utils
         /// <summary>
         /// Каталог Resources
         /// </summary>
-        public static readonly string ResourcesFolder = $"{Application.dataPath}\\Resources";
-
+        private static readonly string ResourcesFolder = $"{Application.dataPath}\\Resources";
+        
+        /// <summary>
+        /// Путь звука конкретного праздника (без расширения)
+        /// </summary>
+        public static string SoundDirectory => $"{ResourcesFolder}\\Audio";
+        
+        /// <summary>
+        /// Каталог сохранения дефолтных звуков
+        /// </summary>
+        public static readonly string DefaultSoundsFolder = $"{ResourcesFolder}\\{DEFAULT_SOUNDS_SUB_PATH}";
+        
         /// <summary>
         /// Путь к дефолтным звукам в Resources
         /// </summary>
         public const string DEFAULT_SOUNDS_SUB_PATH = "Audio\\Default";
         
         /// <summary>
-        /// Каталог сохранения дефолтных звуков
+        /// Путь звука события относительно папки Resources (без расширения)
         /// </summary>
-        public static readonly string DefaultSoundsGenerateFolder = $"{ResourcesFolder}\\{DEFAULT_SOUNDS_SUB_PATH}";
-        
-        /// <summary>
-        /// Каталог звука конкретного праздника
-        /// </summary>
-        public static string HolidaySoundPath(string sourceId) => $"{ResourcesFolder}\\Audio\\{sourceId}";
+        public static string HolidaySoundSubPath(string sourceId) => $"Audio\\{sourceId}";
 
+        /// <summary>
+        /// Полный путь звука конкретного календарного события (без расширения) 
+        /// </summary>
+        public static string FullHolidaySoundPath(string sourceId) =>
+            $"{ResourcesFolder}\\{HolidaySoundSubPath(sourceId)}";
+        
         #endregion
         
         public static readonly SynthesisExternalOptions DefaultExternalOptions = new SynthesisExternalOptions

@@ -77,11 +77,6 @@ namespace Data.Calendar
         public Sprite sprite;
         
         /// <summary>
-        /// Аудио клип
-        /// </summary>
-        public AudioClip clip;
-        
-        /// <summary>
         /// Строковое представление даты, которое сериализуется в Дату
         /// </summary>
         [SerializeField] private string stringDate;
@@ -108,7 +103,7 @@ namespace Data.Calendar
             DateTime = stringDate.GetDateTime();
             
             SourceId = GenerateSourceId(this);
-            Directory.CreateDirectory(Params.HolidaySoundPath(SourceId));
+            //Directory.CreateDirectory(Params.HolidaySoundPath(SourceId));
         }
 
         /// <summary>

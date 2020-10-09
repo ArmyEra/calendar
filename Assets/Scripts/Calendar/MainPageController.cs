@@ -5,6 +5,7 @@ using Audio.CashedSounds.Default.Utils;
 using Calendar.DatePanel;
 using Calendar.InfoPanel;
 using Calendar.InfoPanel.Utils;
+using Calendar.Utils;
 using Core;
 using Data.Calendar;
 using Extensions;
@@ -16,15 +17,11 @@ namespace Calendar
 {
     public class MainPageController : MonoBehaviour, IStartable
     {
-        /// <summary>
-        /// Текущая активная дата
-        /// </summary>
-        public static DateTime ActiveDate { get; private set; } = DateTime.Today;
-        
-        /// <summary>
-        /// Текущий активный тип панели
-        /// </summary>
-        public static CalendarEventTypes ActiveCalendarEventType { get; private set; } = CalendarEventTypes.MilitaryMemoryDay;
+        public static UniqEventInfo ActiveInfo = new UniqEventInfo
+        {
+            Date = DateTime.Today,
+            CalendarEventType = CalendarEventTypes.MilitaryMemoryDay
+        };
         
         [Header("Контроллеры")] 
         [SerializeField] private DatePanelController datePanelController;
@@ -79,7 +76,7 @@ namespace Calendar
         /// </summary>
         private void OnDateChanged(params object[] args)
         {
-            ActiveDate = (DateTime) args[0];
+            ActiveInfo.Date = (DateTime) args[0];
         }
 
         /// <summary>
@@ -87,7 +84,7 @@ namespace Calendar
         /// </summary>
         private void OnCalendarEventTypeChanged(params object[] args)
         {
-            ActiveCalendarEventType = (CalendarEventTypes) args[0];
+            ActiveInfo.CalendarEventType = (CalendarEventTypes) args[0];
         }
 
         /// <summary>
@@ -106,7 +103,7 @@ namespace Calendar
         /// </summary>
         private void PlayHello()
         {
-            var soundType = DayTimeSoundManager.GetGreetingSoundType();
+            var soundType = DateTimeSoundManager.GetGreetingSoundType();
             SoundManger.PlayQueued(soundType);
         }
     }

@@ -1,4 +1,6 @@
 ﻿using System;
+using Audio;
+using Audio.CashedSounds.Default.Utils;
 using Calendar.InfoPanel.Utils;
 using Core;
 using Data.Calendar;
@@ -68,9 +70,10 @@ namespace Calendar.InfoPanel.Tabs
                 return;
 
             var newCalendarEvent =
-                new CalendarEventData(CalendarEventTypes.Notes, MainPageController.ActiveDate) {textInfo = text};
+                new CalendarEventData(CalendarEventTypes.Notes, MainPageController.ActiveInfo.Date) {textInfo = text};
             
             EventManager.RaiseEvent(EventType.CalendarEventAdd, newCalendarEvent, 1);
+            SoundManger.PlayQueued(DefaultSoundType.EventAdded);
             SetPanelActive(false);
         }
 

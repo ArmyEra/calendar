@@ -47,10 +47,10 @@ namespace Calendar.InfoPanel
 
         public void Initialize()
         {
-            OnStartInitialize();
+            InitializeOnStart();
         }
 
-        private void OnStartInitialize()
+        private void InitializeOnStart()
         {
             if (_startInitialized)
                 return;

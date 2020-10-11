@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using Calendar.DatePanel.Utils;
+using Core;
 using Extensions;
 using UnityEngine;
 using Utils;
+using EventType = Core.EventType;
 
 namespace Calendar.DatePanel
 {
     public class DateContainer : MonoBehaviour
     {
-        private static bool _itemRectInitialized;
+        private static bool _initializedOnStart;
         private static Vector2 _itemSpace = Vector2.zero;
         private static Vector2 _itemSize = Vector2.zero;
         
@@ -18,18 +21,32 @@ namespace Calendar.DatePanel
         [SerializeField] private GameObject dateItemTemplate;
 
         private RectTransform _rectTransform;
+        private readonly List<GameObject> _dayObjects = new List<GameObject>();
         
+        /// <summary>
+        /// Инициализирует кнопки-даты 
+        /// </summary>
         public void Initialize(in DateTime monthDate)
         {
-            _rectTransform = GetComponent<RectTransform>();
+            InitializeOnStart();
             monthDate.GetBoundIndexes(out var startIndex, out var finalIndex);
-
-            if (!_itemRectInitialized)
-                GetItemSize();
-            
-            SetItems(monthDate, startIndex, finalIndex);
+            SetItems(monthDate.FirstMonthDate(), startIndex, finalIndex);
         }
 
+        private void InitializeOnStart()
+        {
+            if(_initializedOnStart)
+                return;
+
+            _rectTransform = GetComponent<RectTransform>();
+            GetItemSize();
+            
+            _initializedOnStart = true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         private void GetItemSize()
         {
             var gridSize = _rectTransform.rect.size;
@@ -41,9 +58,8 @@ namespace Calendar.DatePanel
             _itemSize = new Vector2(minValue, minValue);
         }
 
-        private void SetItems(DateTime now, GridCell startIndex, GridCell finalIndex)
+        private void SetItems(DateTime startDate, GridCell startIndex, GridCell finalIndex)
         {
-            var startDate = now.FirstMonthDate();
             var startTotalIndex = startIndex.GetTotalIndex(Params.GridSize);
             var finalTotalIndex = finalIndex.GetTotalIndex(Params.GridSize);
 
@@ -62,7 +78,22 @@ namespace Calendar.DatePanel
                 var dateItemGameObject = Instantiate(dateItemTemplate, transform);
                 var dateItem = dateItemGameObject.transform.GetComponent<DateItem>();
                 dateItem.SetUp(in dateItemSetUpData);
+                
+                _dayObjects.Add(dateItemGameObject);
             }
+        }
+
+        /// <summary>
+        /// Разрушает все кнопки даты
+        /// </summary>
+        public void DestroyItems(int monthIncrement)
+        {
+            for(var i = 0; i < _dayObjects.Count; i++)
+                Destroy(_dayObjects[i]);
+            
+            _dayObjects.Clear();
+            
+            EventManager.RaiseEvent(EventType.OnMonthChanged, monthIncrement);
         }
     }
 }

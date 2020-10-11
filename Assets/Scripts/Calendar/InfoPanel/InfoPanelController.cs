@@ -13,13 +13,10 @@ namespace Calendar.InfoPanel
         [SerializeField] private ViewInfoController viewInfoController;
         [SerializeField] private TabsController tabsController;
 
-        private DateTime _monthDate;
         private readonly List<CalendarEventData> _monthEvents = new List<CalendarEventData>();
         
         public void Initialize(in DateTime monthDate, IEnumerable<CalendarEventData> monthEvents)
         {
-            _monthDate = monthDate;
-            
             _monthEvents.Clear();
             _monthEvents.AddRange(monthEvents);
             

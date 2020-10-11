@@ -15,6 +15,7 @@ namespace Core
         TranslatedSoundLoaded,
         
         OnDateChanged,
+        OnMonthChanged,
         OnCalendarEventTypeChanged,
         
         CalendarEventAdd

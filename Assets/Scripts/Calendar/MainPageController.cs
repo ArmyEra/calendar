@@ -17,7 +17,7 @@ namespace Calendar
 {
     public class MainPageController : MonoBehaviour, IStartable
     {
-        public static UniqEventInfo ActiveInfo = new UniqEventInfo
+        public static readonly UniqEventInfo ActiveInfo = new UniqEventInfo
         {
             Date = DateTime.Today,
             CalendarEventType = CalendarEventTypes.MilitaryMemoryDay
@@ -36,6 +36,8 @@ namespace Calendar
         /// </summary>
         private CalendarEventsContainer[] CalendarEventsContainers
             => new[] {holidayCalendarEvents, scheduledCalendarEvents};
+
+        private DateTime _shownMonth;
         
         public void OnStart()
         {
@@ -45,8 +47,10 @@ namespace Calendar
             scheduledCalendarEvents.Initialize();
             
             EventManager.AddHandler(EventType.OnDateChanged, OnDateChanged);
+            EventManager.AddHandler(EventType.OnMonthChanged, OnMonthChanged);
             EventManager.AddHandler(EventType.OnCalendarEventTypeChanged, OnCalendarEventTypeChanged);
             EventManager.AddHandler(EventType.CalendarEventAdd, OnCalendarEventAdd);
+            
             
             ShowMonth(DateTime.Now);
         }
@@ -54,6 +58,7 @@ namespace Calendar
         private void OnDestroy()
         {
             EventManager.RemoveHandler(EventType.OnDateChanged, OnDateChanged);
+            EventManager.RemoveHandler(EventType.OnMonthChanged, OnMonthChanged);
             EventManager.RemoveHandler(EventType.OnCalendarEventTypeChanged, OnCalendarEventTypeChanged);
             EventManager.RemoveHandler(EventType.CalendarEventAdd, OnCalendarEventAdd);
         }
@@ -63,6 +68,8 @@ namespace Calendar
         /// </summary>
         private void ShowMonth(DateTime date)
         {
+            _shownMonth = date.Date.FirstMonthDate();
+            
             var monthEvents = holidayCalendarEvents.datas.GetMonthEvents(date)
                 .Concat(scheduledCalendarEvents.datas.GetMonthEvents(date))
                 .ToArray();
@@ -71,6 +78,17 @@ namespace Calendar
             datePanelController.Initialize(date);
         }
 
+        /// <summary>
+        /// Воспроизвести Приветствие 
+        /// </summary>
+        private void PlayHello()
+        {
+            var soundType = DateTimeSoundManager.GetGreetingSoundType();
+            SoundManger.PlayQueued(soundType);
+        }
+
+        #region EVENTS
+        
         /// <summary>
         /// Событие, вызываемое при изменнии даты 
         /// </summary>
@@ -99,13 +117,21 @@ namespace Calendar
         }
 
         /// <summary>
-        /// Воспроизвести Приветствие 
+        /// Событие, срабатываемое при изменении месяца
         /// </summary>
-        private void PlayHello()
+        private void OnMonthChanged(params object[] args)
         {
-            var soundType = DateTimeSoundManager.GetGreetingSoundType();
-            SoundManger.PlayQueued(soundType);
+            var totalMonths = (int) args[0];
+            var sign = Math.Sign(totalMonths);
+            totalMonths = Math.Abs(totalMonths);
+
+            var years = sign * (totalMonths / 12);
+            var months = sign * (totalMonths % 12);
+            
+            ShowMonth(_shownMonth.AddYears(years).AddMonths(months));
         }
+        
+        #endregion
     }
 }
 

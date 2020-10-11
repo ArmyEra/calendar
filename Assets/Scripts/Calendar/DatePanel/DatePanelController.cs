@@ -12,22 +12,34 @@ namespace Calendar.DatePanel
         [SerializeField] private Text monthHeader;
         [SerializeField] private DateContainer dateContainer;
 
-        private DateTime _monthDate;
-        
         public void Initialize(in DateTime monthDate)
         {
-            _monthDate = monthDate;
-            
-            SetUpHeaders();
+            SetUpHeaders(in monthDate);
             dateContainer.Initialize(in monthDate);
         }
 
-        private void SetUpHeaders()
+        private void SetUpHeaders(in DateTime monthDate)
         {
-            yearHeader.text = _monthDate.Year.ToString();
+            yearHeader.text = monthDate.Year.ToString();
             
             var currentCulture = CultureInfo.CurrentCulture;
-            monthHeader.text = currentCulture.TextInfo.ToTitleCase(currentCulture.DateTimeFormat.GetMonthName(_monthDate.Month)); 
+            monthHeader.text = currentCulture.TextInfo.ToTitleCase(currentCulture.DateTimeFormat.GetMonthName(monthDate.Month)); 
         }
+
+        #region TESTUPDATE
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                dateContainer.DestroyItems(1);
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                dateContainer.DestroyItems(-1);
+            }
+        }
+
+        #endregion
     }
 }

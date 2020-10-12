@@ -100,9 +100,10 @@ namespace Audio
 
         public static void PlayQueued(params CalendarEventData[] calendarEvents)
         {
+            
             foreach (var calendarEvent in calendarEvents)
             {
-                var queuedSoundInfo = new CalendarClipQueueInfo(calendarEvent);
+                var queuedSoundInfo = new HolidayClipQueueInfo(calendarEvent);
                 Instance._clipQueueInfos.Enqueue(queuedSoundInfo);
             }
         }

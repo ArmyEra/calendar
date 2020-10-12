@@ -59,14 +59,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/AudioManger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/DefaultSounds.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/AudioManger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Sounds.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/DefaultSounds.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/HolidaySoundManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/DefaultSoundManager.cs" />
-        <option value="$USER_HOME$/source/repos/TestYandexSpeachKit/SpeechKitApi/Utils/EnumValueNameHelper.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/DefaultSoundType.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/ClipQueueInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/DefaultClipQueueInfo.cs" />
@@ -89,7 +81,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/NewNodePanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/IClipQueueInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/DefaultClipQueueInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/SoundManger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/Utils/UniqEventInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/CashedSounds/Default/DefaultSoundManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/CashedSounds/Holiday/HolidaySoundManager.cs" />
@@ -105,11 +96,20 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/CashedSounds/Default/Utils/DefaultSoundType.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/YandexSpeechKit/SpeechKitManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/EnumValueNameHelper.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/FlowChartStates.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Attributes/FlowChartStateAttribute.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/FlowChartStateHelper.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/AttributeExtensions/AttributeExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/AttributeExtensions/FlowChartStateExtensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/QueuedClipStates.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/FlowChartStates.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/AttributeExtensions/AudioFlowChartStateExtensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/AudioFlowChartStates.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/AudioFlowChart.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/HolidayClipQueueInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Utils/AudioFlowChartStates.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/SoundManger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/AudioFlowChartInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/AudioFlowChart.cs" />
       </list>
     </option>
   </component>
@@ -145,10 +145,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6320">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="6320" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -185,7 +185,7 @@
       <workItem from="1602406322913" duration="3780000" />
       <workItem from="1602426974670" duration="4924000" />
       <workItem from="1602432144181" duration="30000" />
-      <workItem from="1602473559516" duration="2764000" />
+      <workItem from="1602473559516" duration="8332000" />
     </task>
     <servers />
   </component>
@@ -290,10 +290,10 @@
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
     <state x="1123" y="234" key="RiderGenerateDialog/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602249503249" />
-    <state x="2553" y="0" width="1051" height="1087" key="dock-window-1" timestamp="1602238096473">
+    <state x="2553" y="0" width="826" height="1087" key="dock-window-1" timestamp="1602492854730">
       <screen x="2560" y="0" width="2560" height="1080" />
     </state>
-    <state x="2553" y="0" width="1051" height="1087" key="dock-window-1/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602238096473" />
+    <state x="2553" y="0" width="826" height="1087" key="dock-window-1/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602492854730" />
     <state x="936" y="250" key="run.anything.popup" timestamp="1602475407651">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>

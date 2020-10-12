@@ -1,4 +1,5 @@
 ﻿using System;
+using Audio.FlowChart.Utils;
 using Audio.Utils;
 
 namespace Attributes
@@ -6,9 +7,9 @@ namespace Attributes
     [AttributeUsage(AttributeTargets.Field)]
     public class FlowChartStateAttribute: Attribute
     {
-        public readonly FlowChartStates State;
+        public readonly AudioFlowChartStates State;
 
-        public FlowChartStateAttribute(FlowChartStates state)
+        public FlowChartStateAttribute(AudioFlowChartStates state)
         {
             State = state;
         }

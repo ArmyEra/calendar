@@ -38,17 +38,24 @@
               </e>
             </e>
             <e p="ClipQueue" t="Include">
-              <e p="CalendarClipQueueInfo.cs" t="Include" />
               <e p="DefaultClipQueueInfo.cs" t="Include" />
+              <e p="HolidayClipQueueInfo.cs" t="Include" />
               <e p="IClipQueueInfo.cs" t="Include" />
             </e>
             <e p="Extensions" t="Include">
               <e p="DictionaryExtensions.cs" t="Include" />
             </e>
+            <e p="FlowChart" t="Include">
+              <e p="AudioFlowChart.cs" t="Include" />
+              <e p="AudioFlowChartInfo.cs" t="Include" />
+              <e p="Utils" t="Include">
+                <e p="AudioFlowChartStates.cs" t="Include" />
+              </e>
+            </e>
             <e p="SoundManger.cs" t="Include" />
             <e p="Utils" t="Include">
-              <e p="FlowChartStates.cs" t="Include" />
               <e p="Params.cs" t="Include" />
+              <e p="QueuedClipStates.cs" t="Include" />
             </e>
           </e>
           <e p="calendar" t="Include">
@@ -91,7 +98,7 @@
           <e p="Extensions" t="Include">
             <e p="AttributeExtensions" t="Include">
               <e p="AttributeExtensions.cs" t="Include" />
-              <e p="FlowChartStateExtensions.cs" t="Include" />
+              <e p="AudioFlowChartStateExtensions.cs" t="Include" />
             </e>
             <e p="CalendarEventDataExtensions.cs" t="Include" />
             <e p="DateTimeExtensions.cs" t="Include" />

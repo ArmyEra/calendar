@@ -38,6 +38,7 @@
               </e>
             </e>
             <e p="ClipQueue" t="Include">
+              <e p="ClipQueueCollection.cs" t="Include" />
               <e p="DefaultClipQueueInfo.cs" t="Include" />
               <e p="HolidayClipQueueInfo.cs" t="Include" />
               <e p="IClipQueueInfo.cs" t="Include" />
@@ -46,8 +47,11 @@
               <e p="DictionaryExtensions.cs" t="Include" />
             </e>
             <e p="FlowChart" t="Include">
-              <e p="AudioFlowChart.cs" t="Include" />
-              <e p="AudioFlowChartInfo.cs" t="Include" />
+              <e p="Model" t="Include">
+                <e p="AudioFlowChart.cs" t="Include" />
+                <e p="AudioFlowChartNode.cs" t="Include" />
+                <e p="AudioFlowChartRootNode.cs" t="Include" />
+              </e>
               <e p="Utils" t="Include">
                 <e p="AudioFlowChartStates.cs" t="Include" />
               </e>

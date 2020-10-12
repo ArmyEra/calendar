@@ -8,7 +8,7 @@ using EventType = Core.EventType;
 
 namespace Audio.ClipQueue
 {
-    public class CalendarClipQueueInfo: IClipQueueInfo
+    public class HolidayClipQueueInfo: IClipQueueInfo
     {
         private CalendarEventData _calendarEventData;
         private readonly string _sourceId;
@@ -16,7 +16,7 @@ namespace Audio.ClipQueue
         public AudioClip Clip { get; private set; }
         public bool ClipLoaded { get; private set; }
 
-        public CalendarClipQueueInfo(CalendarEventData eventData)
+        public HolidayClipQueueInfo(CalendarEventData eventData)
         {
             _calendarEventData = eventData;
             _sourceId = _calendarEventData.SourceId;

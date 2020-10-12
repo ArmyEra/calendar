@@ -1,6 +1,9 @@
-﻿namespace Audio.Utils
+﻿namespace Audio.FlowChart.Utils
 {
-    public enum FlowChartStates
+    /// <summary>
+    /// Вершины графа менеджера воспроизведения звука
+    /// </summary>
+    public enum AudioFlowChartStates
     {
         Null,
         

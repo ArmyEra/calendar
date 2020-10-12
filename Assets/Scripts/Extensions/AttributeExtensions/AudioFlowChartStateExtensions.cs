@@ -1,5 +1,6 @@
 ﻿using System;
 using Attributes;
+using Audio.FlowChart.Utils;
 using Audio.Utils;
 
 namespace Extensions.AttributeExtensions
@@ -7,9 +8,9 @@ namespace Extensions.AttributeExtensions
     /// <summary>
     /// Расширение аттрибута FlowChartState 
     /// </summary>
-    public static class FlowChartStateExtensions
+    public static class AudioFlowChartStateExtensions
     {
-        public static FlowChartStates GetState(this object value)
+        public static AudioFlowChartStates GetState(this object value)
         {
             var objTypeInfo = value.CheckNullValue(out var objType);
             if (!(objTypeInfo.IsEnum || objTypeInfo.IsClass))
@@ -18,7 +19,7 @@ namespace Extensions.AttributeExtensions
             var fieldInfo = objType.GetField(value.ToString());
             var stateAttribute = (FlowChartStateAttribute) Attribute.GetCustomAttribute(fieldInfo, typeof(FlowChartStateAttribute));
 
-            return stateAttribute?.State ?? FlowChartStates.Null;
+            return stateAttribute?.State ?? AudioFlowChartStates.Null;
         }
     }
 }

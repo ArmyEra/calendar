@@ -17,10 +17,18 @@ namespace YandexSpeechKit
 {
     public class SpeechKitManager: Singleton<SpeechKitManager>, IStartable
     {
-        public static SpeechKitClient Client;
+        public static SpeechKitClient Client { get; private set; }
+
+        [SerializeField] private bool authorize;
         
         public void OnStart()
         {
+            if (!authorize)
+            {
+                print("Authorization turned off!");
+                return;
+            }
+
             object[] AuthorizationBegin()
             {
                 return new object[]
@@ -32,7 +40,7 @@ namespace YandexSpeechKit
             void InitializeCallback(object[] args)
             {
                 Client = (SpeechKitClient) args[0];
-                
+                print("Y.SK authorization completed!");
                 EventManager.RaiseEvent(EventType.YandexClientCreated);
             }
             

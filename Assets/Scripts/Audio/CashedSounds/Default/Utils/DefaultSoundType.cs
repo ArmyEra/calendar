@@ -1,34 +1,36 @@
-﻿using SpeechKitApi.Attributes;
+﻿using Attributes;
+using Audio.Utils;
+using SpeechKitApi.Attributes;
 
 namespace Audio.CashedSounds.Default.Utils
 {
     public enum DefaultSoundType
     {
-        [EnumValueString("Доброе утро!")]
+        [EnumValueString("Доброе утро!"), FlowChartState(FlowChartStates.Greeting)]
         GoodMorning,
         
-        [EnumValueString("Добрый день!")]
+        [EnumValueString("Добрый день!"), FlowChartState(FlowChartStates.Greeting)]
         GoodAfternoon,
         
-        [EnumValueString("Добрый вечер!")]
+        [EnumValueString("Добрый вечер!"), FlowChartState(FlowChartStates.Greeting)]
         GoodEvening,
         
-        [EnumValueString("Доброй ночи!")]
+        [EnumValueString("Доброй ночи!"), FlowChartState(FlowChartStates.Greeting)]
         GoodNight,
         
-        [EnumValueString("Сегодня")]
+        [EnumValueString("Сегодня"), FlowChartState(FlowChartStates.DayNotification)]
         Today,
         
-        [EnumValueString("В этот день")]
+        [EnumValueString("В этот день"), FlowChartState(FlowChartStates.DayNotification)]
         ThisDay,
         
-        [EnumValueString("У вас запланировано событие")]
+        [EnumValueString("Празднуется"), FlowChartState(FlowChartStates.HolidayPreview)]
+        HolidayProcess,
+        
+        [EnumValueString("У вас запланировано событие"), FlowChartState(FlowChartStates.NoteNotification)]
         ScheduledEvent,
         
-        [EnumValueString("Событие добавлено")]
-        EventAdded,
-        
-        [EnumValueString("Празднуется")]
-        HolidayProcess
+        [EnumValueString("Событие добавлено"), FlowChartState(FlowChartStates.Other)]
+        EventAdded
     }
 }

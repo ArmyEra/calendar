@@ -10,6 +10,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5F9BB86D-B61F-4F4B-BC1E-3AB5F35C8275/fb/5feb869f/SynthesisOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5284FDBC-76B5-453D-8ED0-C1E1976638D9/e5/47134e21/ThreadManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/d2/56eb137d/IEnumerable`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C0CBC78-3B01-48C2-97B2-0B59DE21BAB3/d8/cd5c13cd/ThreadManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5F9BB86D-B61F-4F4B-BC1E-3AB5F35C8275/96/8814d177/IoExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/3d/4ff24d83/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
@@ -59,15 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/DefaultSoundType.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/ClipQueueInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/DefaultClipQueueInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/Default/DefaultSoundManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Default/DefaultSoundManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Default/Utils/DefaultSoundType.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Holiday/HolidaySoundManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Default/Utils/Greeting.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Default/Utils/DayTime.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/CashedSounds/Default/Utils/DayTime.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/CashedSounds/Default/Utils/DayTimeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/Tab.cs" />
@@ -79,8 +71,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/CashedSounds/Default/Utils/DayTimeSoundManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/CashedSounds/Default/Utils/DateTimeSoundManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/NewNodePanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/IClipQueueInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/DefaultClipQueueInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/Utils/UniqEventInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/CashedSounds/Default/DefaultSoundManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/CashedSounds/Holiday/HolidaySoundManager.cs" />
@@ -105,11 +95,22 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/AttributeExtensions/AudioFlowChartStateExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/AudioFlowChartStates.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/AudioFlowChart.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/HolidayClipQueueInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Utils/AudioFlowChartStates.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/DefaultClipQueueInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/IClipQueueInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/SoundManger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/AudioFlowChartInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Utils/AudioFlowChartStates.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/HolidayClipQueueInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/AudioFlowChart.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/AudioFlowChartInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/AudioFlowChartRootInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/AudioFlowChartRootNode.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/TreeModel/AudioFlowChart.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/TreeModel/AudioFlowChartRootNode.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/ClipQuqueCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Model/AudioFlowChartRootNode.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/ClipQueueCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Model/AudioFlowChart.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Model/AudioFlowChartNode.cs" />
       </list>
     </option>
   </component>
@@ -186,6 +187,7 @@
       <workItem from="1602426974670" duration="4924000" />
       <workItem from="1602432144181" duration="30000" />
       <workItem from="1602473559516" duration="8332000" />
+      <workItem from="1602494117788" duration="15083000" />
     </task>
     <servers />
   </component>
@@ -286,14 +288,14 @@
     </state>
     <state width="2517" height="388" key="GridCell.Tab.3.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190370" />
     <state width="2517" height="388" key="GridCell.Tab.3.right/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state x="1123" y="234" key="RiderGenerateDialog" timestamp="1602249503249">
+    <state x="1123" y="234" key="RiderGenerateDialog" timestamp="1602506341500">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state x="1123" y="234" key="RiderGenerateDialog/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602249503249" />
-    <state x="2553" y="0" width="826" height="1087" key="dock-window-1" timestamp="1602492854730">
+    <state x="1123" y="234" key="RiderGenerateDialog/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602506341500" />
+    <state x="2560" y="0" width="809" height="1080" key="dock-window-1" timestamp="1602512987649">
       <screen x="2560" y="0" width="2560" height="1080" />
     </state>
-    <state x="2553" y="0" width="826" height="1087" key="dock-window-1/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602492854730" />
+    <state x="2560" y="0" width="809" height="1080" key="dock-window-1/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602512987649" />
     <state x="936" y="250" key="run.anything.popup" timestamp="1602475407651">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
@@ -322,6 +324,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Model/AudioFlowChartNode.cs</url>
+          <line>92</line>
+          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Audio\FlowChart\Model\AudioFlowChartNode.cs" initialLine="67">
+            <startOffsets>
+              <option value="3540" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3599" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Model/AudioFlowChartNode.cs</url>
+          <line>77</line>
+          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Audio\FlowChart\Model\AudioFlowChartNode.cs" initialLine="57">
+            <startOffsets>
+              <option value="3112" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3171" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

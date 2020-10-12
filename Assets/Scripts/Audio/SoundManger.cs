@@ -8,6 +8,8 @@ using Audio.CashedSounds.Default;
 using Audio.CashedSounds.Default.Utils;
 using Audio.CashedSounds.Holiday;
 using Audio.ClipQueue;
+using Audio.FlowChart;
+using Audio.FlowChart.Model;
 using Audio.Utils;
 using Calendar.InfoPanel.Utils;
 using Data.Calendar;
@@ -26,7 +28,8 @@ namespace Audio
     {
         [SerializeField] private AudioSource defaultSource;
         
-        private readonly Queue<IClipQueueInfo> _clipQueueInfos = new Queue<IClipQueueInfo>();
+        //private readonly Queue<IClipQueueInfo> _clipQueueInfos = new Queue<IClipQueueInfo>();
+        private readonly AudioFlowChart _audioFlowChart = AudioFlowChart.Create();
         private bool _awaitInvoke = true;
         
         public void OnStart()
@@ -41,7 +44,7 @@ namespace Audio
         {
             _awaitInvoke = false;
             StopAllCoroutines();
-            _clipQueueInfos.Clear();
+            _audioFlowChart.Dispose();
         }
 
         /// <summary>
@@ -89,6 +92,7 @@ namespace Audio
             return clip.length;
         }
 
+        
         public static void PlayQueued(params DefaultSoundType[] soundTypes)
         {
             foreach (var soundType in soundTypes)
@@ -107,6 +111,7 @@ namespace Audio
                 Instance._clipQueueInfos.Enqueue(queuedSoundInfo);
             }
         }
+        
         
         /// <summary>
         /// Генерирует звук и сохраняет в файл 

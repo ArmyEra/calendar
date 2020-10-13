@@ -113,6 +113,39 @@
             <e p="IStartable.cs" t="Include" />
             <e p="OrderInitializer.cs" t="Include" />
           </e>
+          <e p="Swipe" t="Include">
+            <e p="Detectors" t="Include">
+              <e p="ISwiperDetector.cs" t="Include" />
+              <e p="MouseSwipeDetector.cs" t="Include" />
+              <e p="ScreenTouchSwipeDetector.cs" t="Include" />
+            </e>
+            <e p="Extensions" t="Include">
+              <e p="FloatExtensions.cs" t="Include" />
+              <e p="ResolutionExtensions.cs" t="Include" />
+              <e p="SWipeExtensions.cs" t="Include" />
+            </e>
+            <e p="SwipeController.cs" t="Include" />
+            <e p="Utils" t="Include">
+              <e p="DetectorSettings.cs" t="Include" />
+              <e p="Input" t="Include">
+                <e p="InputData.cs" t="Include" />
+                <e p="InputGrid.cs" t="Include" />
+                <e p="InputInfo.cs" t="Include" />
+              </e>
+              <e p="Send" t="Include">
+                <e p="OptionalSwipeInfo.cs" t="Include" />
+                <e p="SwipeInfo.cs" t="Include" />
+                <e p="TouchInfo.cs" t="Include" />
+              </e>
+              <e p="Special" t="Include">
+                <e p="Condition.cs" t="Include" />
+                <e p="GridCondition.cs" t="Include" />
+                <e p="LengthCondition.cs" t="Include" />
+                <e p="TimeCondition.cs" t="Include" />
+              </e>
+              <e p="SwipeDirection.cs" t="Include" />
+            </e>
+          </e>
           <e p="Utils" t="Include">
             <e p="CanvasGroupControl.cs" t="Include" />
             <e p="Singleton.cs" t="Include" />

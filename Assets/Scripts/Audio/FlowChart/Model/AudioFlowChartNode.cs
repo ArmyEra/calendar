@@ -2,11 +2,12 @@
 using Audio.ClipQueue;
 using Audio.FlowChart.Utils;
 using TreeModule;
-using TreeModule.Utils;
-using UnityEngine;
 
 namespace Audio.FlowChart.Model
 {
+    /// <summary>
+    /// Узел графа аудио-менеджера
+    /// </summary>
     public class AudioFlowChartNode: TreeNode<ClipQueueCollection>
     {
         private readonly AudioFlowChartStates _state;
@@ -18,51 +19,9 @@ namespace Audio.FlowChart.Model
             Value = new ClipQueueCollection();
         }
 
-        public AudioFlowChartNode(TreeRootNode<ClipQueueCollection> parent, ClipQueueCollection value, AudioFlowChartStates state) 
-            : base(parent, value)
-        {
-            _state = state;
-        }
-
-        public override TreeRootNode<ClipQueueCollection> GetNext(int step = 1, TrackingDirection preferedDirection = TrackingDirection.Null)
-        {
-            if (step == 0)
-                return this;
-
-            step = Mathf.Clamp(step, -1, 1);
-            
-            if (preferedDirection == TrackingDirection.Null)
-                preferedDirection = Container.DefaultTrackingDirection;
-
-            switch (preferedDirection)
-            {
-                case TrackingDirection.ToBrother:
-                    return GetNextBrother(this, step);
-                case TrackingDirection.ToChild:
-                    return GetNextChild(this, step);
-                default: return null;
-            }
-            
-            
-            // var nextTreeGenericNode = base.GetNext(step, preferedDirection);
-            // switch (nextTreeGenericNode)
-            // {
-            //     case null:
-            //         return null;
-            //     case AudioFlowChartNode nextAudioNode:
-            //         return !nextAudioNode.Value.IsEmpty 
-            //             ? nextAudioNode 
-            //             : null;
-            //     default:
-            //         return null;
-            // }
-        }
-
-        private void ClearQueue()
-        {
-            Value.Clear();
-        }
-        
+        /// <summary>
+        /// Утсанавливает новые клипы в очередь узлов графов 
+        /// </summary>
         private void SetNewClips(params IClipQueueInfo[] clipQueueInfos)
         {
             if(clipQueueInfos.Length == 0)
@@ -95,7 +54,7 @@ namespace Audio.FlowChart.Model
         public static void ClearClips(TreeRootNode<ClipQueueCollection> clipQueueCollectionNode, params object[] args)
         {
             if (clipQueueCollectionNode is AudioFlowChartNode treeNode)
-                treeNode.ClearQueue();
+                treeNode.Value.Clear();
         }
         
         /// <summary>
@@ -104,14 +63,27 @@ namespace Audio.FlowChart.Model
         /// <param name="args">[0] - deep; [1] - IClipQueueInfo[]</param>
         public static void SetNewClips(TreeRootNode<ClipQueueCollection> clipQueueCollectionNode, params object[] args)
         {
-            if (clipQueueCollectionNode is AudioFlowChartNode treeNode)
-            {
-                var newClipInfos = ((IClipQueueInfo[]) args[1])
-                    .Where(cqi => cqi.State == treeNode._state)
-                    .ToArray();
+            if (!(clipQueueCollectionNode is AudioFlowChartNode treeNode)) 
+                return;
             
-                treeNode.SetNewClips(newClipInfos);
+            var newClipInfos = ((IClipQueueInfo[]) args[1])
+                .Where(cqi => cqi.FlowChartState == treeNode._state)
+                .ToArray();
+            
+            treeNode.SetNewClips(newClipInfos);
+        }
+
+        public override string ToString()
+        {
+            var result = $"{_state}";
+            var currentNode = this;
+            while (!currentNode.IsRoot)
+            {
+                currentNode = (AudioFlowChartNode) currentNode.Parent;
+                result = $"{currentNode} -> {result}";
             }
+
+            return result;
         }
     }
 }

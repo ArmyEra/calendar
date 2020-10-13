@@ -6,6 +6,7 @@ using Audio.FlowChart.Utils;
 using Data.Calendar;
 using TreeModule;
 using TreeModule.Utils;
+using UnityEngine;
 
 namespace Audio.FlowChart.Model
 {
@@ -15,41 +16,84 @@ namespace Audio.FlowChart.Model
     public class AudioFlowChart: Tree<ClipQueueCollection>
     {
         private int FrameId { get; set; } = -1;
+
+        private bool _chartIsEmpty = true;
         
         private AudioFlowChart(TrackingDirection trackingDirection) : base(trackingDirection) { }
         
         /// <summary>
-        /// Ставит в очередь   
+        /// Ставит в очередь дефолтные клипы
         /// </summary>
         public void PlayQueued(int frameId, params DefaultSoundType[] soundTypes)
         {
             var clipQueueInfos = soundTypes
-                .Select(st => new DefaultClipQueueInfo(frameId, st));
+                .Select(st => new DefaultClipQueueInfo(st));
             
             UpdateFrame(frameId, clipQueueInfos);
         }
 
+        /// <summary>
+        /// Ставит в очередь клипы календарных событий 
+        /// </summary>
         public void PlayQueued(int frameId, params CalendarEventData[] calendarEvents)
-        {
+        {   
             var clipQueueInfos = calendarEvents
-                .Select(ce => new HolidayClipQueueInfo(frameId, ce));
+                .Select(ce => new HolidayClipQueueInfo(ce));
             
             UpdateFrame(frameId, clipQueueInfos);
         }
 
+        /// <summary>
+        /// Проверят, есть ли какая-то информация для восрпоизведения 
+        /// </summary>
+        public bool HasAnyInfo()
+        {
+            if (_chartIsEmpty)
+                return false;
+
+            var currentQueuedClip = GetNextInfo();
+            return !(_chartIsEmpty = currentQueuedClip == null);
+        }
+        
+        /// <summary>
+        /// Обновляет граф сообщениями текущего кадра 
+        /// </summary>
         private void UpdateFrame(int frameId, IEnumerable<IClipQueueInfo> clipQueueInfos)
         {
+            var clipInfosArray = clipQueueInfos.ToArray();
+            if (clipInfosArray.Length == 0)
+                return;
+            
             if (FrameId != frameId)
             {
                 FrameId = frameId;
                 Root.ChildrenInvoke(AudioFlowChartNode.ClearClips, true);   
             }
-            Root.ChildrenInvoke(AudioFlowChartNode.SetNewClips,true, clipQueueInfos.ToArray());
+            Root.ChildrenInvoke(AudioFlowChartNode.SetNewClips,true, clipInfosArray);
+            _chartIsEmpty = false;
         }
 
-        public IClipQueueInfo GetNextInfo()
+        /// <summary>
+        /// Обходит дерево в поиске клипа. Если клип не найден, то запускается повторный поиск 
+        /// </summary>
+        private IClipQueueInfo GetNextInfo(bool finalSearch = false)
         {
-            if(Current.IsRoot)
+            if (Current.IsRoot)
+                Current.Children.First.Value.SetCurrent();
+
+            while (Current.Value.IsEmpty)
+            {
+                var nextNode = ((TreeNode<ClipQueueCollection>) Current).GetNext();
+                if (nextNode != null)
+                    continue;
+                
+                Current = Root;
+                return finalSearch 
+                    ? null 
+                    : GetNextInfo(true);
+            }
+
+            return Current.Value.Dequeue();
         }
         
         /// <summary>
@@ -85,8 +129,6 @@ namespace Audio.FlowChart.Model
 
             var holidayNotification = new AudioFlowChartNode(holidayPreview, AudioFlowChartStates.HolidayNotification);
             holidayPreview.Add(holidayNotification);
-            //Поставили петлю в рассчете на то, что обработка не будет переходжить к графам с пустыми очередями
-            holidayNotification.Add(dayNotificationNode);
 
             return flowChart;
         }

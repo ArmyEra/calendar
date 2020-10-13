@@ -13,14 +13,9 @@ namespace Audio.ClipQueue
     public class DefaultClipQueueInfo: IClipQueueInfo
     {
         /// <summary>
-        /// УИД потока, в котором произошел запрос на произведение
-        /// </summary>
-        public int FrameId { get; }
-        
-        /// <summary>
         /// Узел звукового менеджера
         /// </summary>
-        public AudioFlowChartStates State { get; }
+        public AudioFlowChartStates FlowChartState { get; }
         
         /// <summary>
         /// Текущие состояние аудио-клипа
@@ -43,11 +38,10 @@ namespace Audio.ClipQueue
         
         private readonly DefaultSoundType _soundType;
         
-        public DefaultClipQueueInfo(int frameId, DefaultSoundType soundType)
+        public DefaultClipQueueInfo(DefaultSoundType soundType)
         {
-            FrameId = frameId;
             _soundType = soundType;
-            State = _soundType.GetState();
+            FlowChartState = _soundType.GetState();
         }
 
         /// <summary>
@@ -73,17 +67,17 @@ namespace Audio.ClipQueue
         }
 
         #region IDisposable Support
-        public bool DisposedValue { get; private set; }
+        public bool IsDisposed { get; private set; }
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!DisposedValue)
+            if (!IsDisposed)
             {
                 if (disposing)
                 {
                     EventManager.RemoveHandler(EventType.DefaultSoundLoaded, OnSoundLoaded);
                 }
-                DisposedValue = true;
+                IsDisposed = true;
             }
         }
         public void Dispose()

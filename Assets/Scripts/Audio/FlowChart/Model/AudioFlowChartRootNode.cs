@@ -4,6 +4,9 @@ using TreeModule;
 
 namespace Audio.FlowChart.Model
 {
+    /// <summary>
+    /// Корневой узел графа аудио-менеджера
+    /// </summary>
     public class AudioFlowChartRootNode: TreeRootNode<ClipQueueCollection>
     {
         public readonly AudioFlowChartStates State = AudioFlowChartStates.Null;

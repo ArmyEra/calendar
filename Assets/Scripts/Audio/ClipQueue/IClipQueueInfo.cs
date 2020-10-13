@@ -8,14 +8,9 @@ namespace Audio.ClipQueue
     public interface IClipQueueInfo: IDisposable
     {
         /// <summary>
-        /// УИД потока, в котором произошел запрос на произведение
-        /// </summary>
-        int FrameId { get; }
-        
-        /// <summary>
         /// Узел звукового менеджера
         /// </summary>
-        AudioFlowChartStates State { get; }
+        AudioFlowChartStates FlowChartState { get; }
         
         /// <summary>
         /// Текущие состояние аудио-клипа
@@ -35,6 +30,6 @@ namespace Audio.ClipQueue
         /// <summary>
         /// Удален ли элемент
         /// </summary>
-        bool DisposedValue { get; }
+        bool IsDisposed { get; }
     }
 }

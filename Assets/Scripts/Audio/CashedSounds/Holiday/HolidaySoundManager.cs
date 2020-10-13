@@ -56,6 +56,9 @@ namespace Audio.CashedSounds.Holiday
             StopAllCoroutines();
         }
 
+        /// <summary>
+        /// Загружает из Resources клип календарного события 
+        /// </summary>
         public static void DownloadSoundFromResource(CalendarEventData eventData)
         {
             Instance.DownloadSoundsFromResources(eventData);

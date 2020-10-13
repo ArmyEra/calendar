@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Audio.ClipQueue;
+using Audio.Extensions;
 using Audio.FlowChart.Utils;
 using TreeModule;
 
@@ -65,25 +66,16 @@ namespace Audio.FlowChart.Model
         {
             if (!(clipQueueCollectionNode is AudioFlowChartNode treeNode)) 
                 return;
+
+            var current = treeNode.Container.Current;
+            if(!current.IsRoot && ((AudioFlowChartNode)current).IsChildNodeOf(treeNode))
+                return;
             
             var newClipInfos = ((IClipQueueInfo[]) args[1])
                 .Where(cqi => cqi.FlowChartState == treeNode._state)
                 .ToArray();
             
             treeNode.SetNewClips(newClipInfos);
-        }
-
-        public override string ToString()
-        {
-            var result = $"{_state}";
-            var currentNode = this;
-            while (!currentNode.IsRoot)
-            {
-                currentNode = (AudioFlowChartNode) currentNode.Parent;
-                result = $"{currentNode} -> {result}";
-            }
-
-            return result;
         }
     }
 }

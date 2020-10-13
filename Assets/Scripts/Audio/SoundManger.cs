@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using Audio.CashedSounds.Default;
 using Audio.CashedSounds.Default.Utils;
 using Audio.CashedSounds.Holiday;
 using Audio.ClipQueue;
-using Audio.FlowChart;
 using Audio.FlowChart.Model;
 using Audio.Utils;
-using Calendar.InfoPanel.Utils;
 using Data.Calendar;
 using OrderExecuter;
 using SpeechKitApi.Models;
@@ -28,7 +24,6 @@ namespace Audio
     {
         [SerializeField] private AudioSource defaultSource;
         
-        //private readonly Queue<IClipQueueInfo> _clipQueueInfos = new Queue<IClipQueueInfo>();
         private readonly AudioFlowChart _audioFlowChart = AudioFlowChart.Create();
         private bool _awaitInvoke = true;
         
@@ -44,7 +39,7 @@ namespace Audio
         {
             _awaitInvoke = false;
             StopAllCoroutines();
-            _audioFlowChart.Dispose();
+            //_audioFlowChart?.Dispose();
         }
 
         /// <summary>
@@ -54,14 +49,16 @@ namespace Audio
         {
             while (_awaitInvoke)
             {
-                yield return new WaitUntil(_clipQueueInfos.Any);
-                
-                var info = _clipQueueInfos.Dequeue();
+                yield return new WaitUntil(_audioFlowChart.HasAnyInfo);
+
+                var info = _audioFlowChart.Current.Value.CashedClip;
                 var clip = info.CheckClip(out var success);
                 if (!success)
                 {
-                    yield return new WaitUntil(() => WaitClipLoaded(Time.time, info));
-                    clip = info.Clip;
+                    var startTime = Time.time;
+                    yield return new WaitUntil(() => WaitClipLoaded(startTime, info));
+                    if(info != null && !info.IsDisposed)
+                        clip = info.Clip;
                 }
 
                 if (clip != null)
@@ -70,48 +67,49 @@ namespace Audio
                     yield return new WaitForSeconds(clipLenght);
                 }
                 
-                info.Dispose();
+                info?.Dispose();
             }
         }
         
         /// <summary>
         /// Функция флага ожидания загрузки клипа 
         /// </summary>
-        private bool WaitClipLoaded(float startTime, IClipQueueInfo info)
+        private static bool WaitClipLoaded(float startTime, IClipQueueInfo info)
         {
-            return info.ClipLoaded || Time.time > startTime + Params.TIME_SOUND_AWAIT;
+            return info == null ||
+                   info.IsDisposed ||
+                   info.ClipState == QueuedClipStates.Playing ||
+                   Time.time > startTime + Params.TIME_SOUND_AWAIT;
         }
 
         #region STATIC EVENTS
+        
+        /// <summary>
+        /// Ставит в очередь воспроизведения новые дефолтные клипы 
+        /// </summary>
+        public static void PlayQueued(params DefaultSoundType[] soundTypes)
+        {
+            Instance._audioFlowChart.PlayQueued(Time.frameCount, soundTypes);
+        }
 
-        public static float Play(AudioClip clip)
+        /// <summary>
+        /// Ставит в очередь воспроизведения новые календарные события 
+        /// </summary>
+        public static void PlayQueued(params CalendarEventData[] calendarEvents)
+        {
+            Instance._audioFlowChart.PlayQueued(Time.frameCount, calendarEvents);
+        }
+        
+        /// <summary>
+        /// Воспроизводит клип и возвращает его длинну 
+        /// </summary>
+        private static float Play(AudioClip clip)
         {
             Instance.defaultSource.clip = clip;
             Instance.defaultSource.Play();
             
             return clip.length;
         }
-
-        
-        public static void PlayQueued(params DefaultSoundType[] soundTypes)
-        {
-            foreach (var soundType in soundTypes)
-            {
-                var queuedSoundInfo = new DefaultClipQueueInfo(soundType);
-                Instance._clipQueueInfos.Enqueue(queuedSoundInfo);    
-            }
-        }
-
-        public static void PlayQueued(params CalendarEventData[] calendarEvents)
-        {
-            
-            foreach (var calendarEvent in calendarEvents)
-            {
-                var queuedSoundInfo = new HolidayClipQueueInfo(calendarEvent);
-                Instance._clipQueueInfos.Enqueue(queuedSoundInfo);
-            }
-        }
-        
         
         /// <summary>
         /// Генерирует звук и сохраняет в файл 
@@ -160,10 +158,7 @@ namespace Audio
                 if (www.isNetworkError || www.isHttpError || !www.isDone)
                     Debug.Log(www.error);
                 else
-                {
-                    //Debug.Log($"Coroutine: clip from path \"{filePath}\" loaded");
                     callback.Invoke(DownloadHandlerAudioClip.GetContent(www));
-                }
             }
         }
 

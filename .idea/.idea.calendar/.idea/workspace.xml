@@ -8,30 +8,44 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5F9BB86D-B61F-4F4B-BC1E-3AB5F35C8275/fb/5feb869f/SynthesisOptions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5284FDBC-76B5-453D-8ED0-C1E1976638D9/e5/47134e21/ThreadManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/d2/56eb137d/IEnumerable`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C0CBC78-3B01-48C2-97B2-0B59DE21BAB3/d8/cd5c13cd/ThreadManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5F9BB86D-B61F-4F4B-BC1E-3AB5F35C8275/96/8814d177/IoExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/3d/4ff24d83/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23170455-DAE4-4ADA-AD8E-D006437FA53A/6c/b2fbda7f/ThreadManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/3e/d0bb0788/DayOfWeek.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/2019.3.15/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/ContentSizeFitter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5F9BB86D-B61F-4F4B-BC1E-3AB5F35C8275/a1/f394ab5d/SynthesisQuality.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BC2876E8-FF0B-42A2-A2A1-1B51F2B23C8A/d8/446a4902/Microphone.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/87/ee540eba/IntrospectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34EDF1BA-24F1-4957-B8F8-B66A28C87077/ea/f7720380/Infinity.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AE22A4E8-F83C-41D6-9684-AE7F557133D9/89/043a8d91/LinkedList`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5F9BB86D-B61F-4F4B-BC1E-3AB5F35C8275/e2/b6aaeebb/SpeechKitClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34EDF1BA-24F1-4957-B8F8-B66A28C87077/74/4c7e5de0/Singleton`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AE22A4E8-F83C-41D6-9684-AE7F557133D9/44/e3bdae05/Queue`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E98ED036-8295-432E-8C11-E52D6243EE11/0b/f14ed990/WaitUntil.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/source/repos/TestYandexSpeachKit/SpeechKitApi/Utils/EnumValueNameHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5284FDBC-76B5-453D-8ED0-C1E1976638D9/e5/47134e21/ThreadManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5F9BB86D-B61F-4F4B-BC1E-3AB5F35C8275/96/8814d177/IoExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E98ED036-8295-432E-8C11-E52D6243EE11/ea/a8410911/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/f3/a42153b2/Exception.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/source/repos/TestYandexSpeachKit/SpeechKitApi/SpeechKitClient.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23170455-DAE4-4ADA-AD8E-D006437FA53A/6c/b2fbda7f/ThreadManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/251AA2EA-82F7-4926-A140-F6243E159BC7/d5/0c2330d7/EnumValueNameHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DEB99CD0-47DF-4EC9-BD97-7C0E0DD72784/9d/28bc53e6/SpeechKitClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/67/2c49800a/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/3e/d0bb0788/DayOfWeek.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/source/repos/TestYandexSpeachKit/TreeModule/TreeNode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/CashedSounds/Default/Utils/DateTimeSoundManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/15/5b782c02/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E98ED036-8295-432E-8C11-E52D6243EE11/d3/011c011a/InvokableCall.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/2019.3.15/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/ContentSizeFitter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5F9BB86D-B61F-4F4B-BC1E-3AB5F35C8275/a1/f394ab5d/SynthesisQuality.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/source/repos/TestYandexSpeachKit/TreeModule/TreeRootNode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/36/c32502b0/SystemException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/351E49E2-A5BF-4FD6-BEAB-B458CE2255F3/f2/a50ce978/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/2019.3.15/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/92/d30c6a73/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/84/c4f7e0e3/List`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BC2876E8-FF0B-42A2-A2A1-1B51F2B23C8A/d8/446a4902/Microphone.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E98ED036-8295-432E-8C11-E52D6243EE11/87/a3512f00/UnityException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/27/bb7f86be/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/a7/e780b86a/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
@@ -42,20 +56,18 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A450743A-1C1D-445E-AA63-7EFBB21C7278/fa/58159bb9/EnumValueStringAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/6a/16f2861d/Task.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/251AA2EA-82F7-4926-A140-F6243E159BC7/82/17d23e35/WavConverter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/87/ee540eba/IntrospectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/567F06F0-5809-4E3E-93EB-0C0666E691A0/16/e37565cf/SynthesisQuality.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34EDF1BA-24F1-4957-B8F8-B66A28C87077/ea/f7720380/Infinity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E98ED036-8295-432E-8C11-E52D6243EE11/e1/c74e693b/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/2019.3.15/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/11/9ee005d2/TaskFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/c6/7466035d/TimeSpan.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/2b/e2c5ca59/IDisposable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/d2/b3ca9001/ConcurrentDictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5F9BB86D-B61F-4F4B-BC1E-3AB5F35C8275/e2/b6aaeebb/SpeechKitClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BC2876E8-FF0B-42A2-A2A1-1B51F2B23C8A/51/13b7f1d8/AudioSource.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34EDF1BA-24F1-4957-B8F8-B66A28C87077/74/4c7e5de0/Singleton`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/87/ebdb922c/Task`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E98ED036-8295-432E-8C11-E52D6243EE11/0b/f14ed990/WaitUntil.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/source/repos/TestYandexSpeachKit/SpeechKitApi/Utils/EnumValueNameHelper.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -95,11 +107,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/AttributeExtensions/AudioFlowChartStateExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/AudioFlowChartStates.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/AudioFlowChart.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/DefaultClipQueueInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/IClipQueueInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/SoundManger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Utils/AudioFlowChartStates.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/HolidayClipQueueInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/AudioFlowChart.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/AudioFlowChartInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/AudioFlowChartRootInfo.cs" />
@@ -107,10 +115,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/TreeModel/AudioFlowChart.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/TreeModel/AudioFlowChartRootNode.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/ClipQuqueCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/DefaultClipQueueInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/IClipQueueInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Model/AudioFlowChartRootNode.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/ClipQueueCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Model/AudioFlowChart.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Model/AudioFlowChartNode.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/HolidayClipQueueInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Model/AudioFlowChart.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/SoundManger.cs" />
       </list>
     </option>
   </component>
@@ -146,10 +158,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="10508">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="10508" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -200,110 +212,110 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1035" y="244" key="#xdebugger.evaluate" timestamp="1602216791789">
+    <state x="1107" y="200" key="#xdebugger.evaluate" timestamp="1602576527893">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state x="1035" y="244" key="#xdebugger.evaluate/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602216791789" />
-    <state width="487" height="464" key="DebuggerActiveHint" timestamp="1602250264568">
+    <state x="1107" y="200" key="#xdebugger.evaluate/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576527893" />
+    <state width="628" height="464" key="DebuggerActiveHint" timestamp="1602576287919">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="487" height="464" key="DebuggerActiveHint/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602250264568" />
-    <state width="2517" height="388" key="GridCell.Tab.0.bottom" timestamp="1602475190369">
+    <state width="628" height="464" key="DebuggerActiveHint/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576287919" />
+    <state width="2517" height="363" key="GridCell.Tab.0.bottom" timestamp="1602576778907">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="388" key="GridCell.Tab.0.bottom/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190369" />
+    <state width="2517" height="363" key="GridCell.Tab.0.bottom/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576778907" />
     <state width="2517" height="388" key="GridCell.Tab.0.bottom/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="388" key="GridCell.Tab.0.center" timestamp="1602475190369">
+    <state width="2517" height="363" key="GridCell.Tab.0.center" timestamp="1602576778907">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="388" key="GridCell.Tab.0.center/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190369" />
+    <state width="2517" height="363" key="GridCell.Tab.0.center/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576778907" />
     <state width="2517" height="388" key="GridCell.Tab.0.center/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="388" key="GridCell.Tab.0.left" timestamp="1602475190369">
+    <state width="2517" height="363" key="GridCell.Tab.0.left" timestamp="1602576778907">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="388" key="GridCell.Tab.0.left/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190369" />
+    <state width="2517" height="363" key="GridCell.Tab.0.left/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576778907" />
     <state width="2517" height="388" key="GridCell.Tab.0.left/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="388" key="GridCell.Tab.0.right" timestamp="1602475190369">
+    <state width="2517" height="363" key="GridCell.Tab.0.right" timestamp="1602576778907">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="388" key="GridCell.Tab.0.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190369" />
+    <state width="2517" height="363" key="GridCell.Tab.0.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576778907" />
     <state width="2517" height="388" key="GridCell.Tab.0.right/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="388" key="GridCell.Tab.1.bottom" timestamp="1602475190370">
+    <state width="2517" height="363" key="GridCell.Tab.1.bottom" timestamp="1602576778908">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="388" key="GridCell.Tab.1.bottom/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190370" />
+    <state width="2517" height="363" key="GridCell.Tab.1.bottom/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576778907" />
     <state width="2517" height="388" key="GridCell.Tab.1.bottom/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="388" key="GridCell.Tab.1.center" timestamp="1602475190370">
+    <state width="2517" height="363" key="GridCell.Tab.1.center" timestamp="1602576778907">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="388" key="GridCell.Tab.1.center/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190370" />
+    <state width="2517" height="363" key="GridCell.Tab.1.center/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576778907" />
     <state width="2517" height="388" key="GridCell.Tab.1.center/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="388" key="GridCell.Tab.1.left" timestamp="1602475190370">
+    <state width="2517" height="363" key="GridCell.Tab.1.left" timestamp="1602576778907">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="388" key="GridCell.Tab.1.left/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190370" />
+    <state width="2517" height="363" key="GridCell.Tab.1.left/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576778907" />
     <state width="2517" height="388" key="GridCell.Tab.1.left/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="388" key="GridCell.Tab.1.right" timestamp="1602475190370">
+    <state width="2517" height="363" key="GridCell.Tab.1.right" timestamp="1602576778907">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="388" key="GridCell.Tab.1.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190370" />
+    <state width="2517" height="363" key="GridCell.Tab.1.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576778907" />
     <state width="2517" height="388" key="GridCell.Tab.1.right/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="388" key="GridCell.Tab.2.bottom" timestamp="1602475190370">
+    <state width="2517" height="363" key="GridCell.Tab.2.bottom" timestamp="1602576778908">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="388" key="GridCell.Tab.2.bottom/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190370" />
+    <state width="2517" height="363" key="GridCell.Tab.2.bottom/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576778908" />
     <state width="2517" height="388" key="GridCell.Tab.2.bottom/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="388" key="GridCell.Tab.2.center" timestamp="1602475190370">
+    <state width="2517" height="363" key="GridCell.Tab.2.center" timestamp="1602576778908">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="388" key="GridCell.Tab.2.center/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190370" />
+    <state width="2517" height="363" key="GridCell.Tab.2.center/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576778908" />
     <state width="2517" height="388" key="GridCell.Tab.2.center/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="388" key="GridCell.Tab.2.left" timestamp="1602475190370">
+    <state width="2517" height="363" key="GridCell.Tab.2.left" timestamp="1602576778908">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="388" key="GridCell.Tab.2.left/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190370" />
+    <state width="2517" height="363" key="GridCell.Tab.2.left/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576778908" />
     <state width="2517" height="388" key="GridCell.Tab.2.left/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="388" key="GridCell.Tab.2.right" timestamp="1602475190370">
+    <state width="2517" height="363" key="GridCell.Tab.2.right" timestamp="1602576778908">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="388" key="GridCell.Tab.2.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190370" />
+    <state width="2517" height="363" key="GridCell.Tab.2.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576778908" />
     <state width="2517" height="388" key="GridCell.Tab.2.right/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="388" key="GridCell.Tab.3.bottom" timestamp="1602475190370">
+    <state width="2517" height="363" key="GridCell.Tab.3.bottom" timestamp="1602576778908">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="388" key="GridCell.Tab.3.bottom/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190370" />
+    <state width="2517" height="363" key="GridCell.Tab.3.bottom/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576778908" />
     <state width="2517" height="388" key="GridCell.Tab.3.bottom/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="388" key="GridCell.Tab.3.center" timestamp="1602475190370">
+    <state width="2517" height="363" key="GridCell.Tab.3.center" timestamp="1602576778908">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="388" key="GridCell.Tab.3.center/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190370" />
+    <state width="2517" height="363" key="GridCell.Tab.3.center/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576778908" />
     <state width="2517" height="388" key="GridCell.Tab.3.center/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="388" key="GridCell.Tab.3.left" timestamp="1602475190370">
+    <state width="2517" height="363" key="GridCell.Tab.3.left" timestamp="1602576778908">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="388" key="GridCell.Tab.3.left/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190370" />
+    <state width="2517" height="363" key="GridCell.Tab.3.left/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576778908" />
     <state width="2517" height="388" key="GridCell.Tab.3.left/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="388" key="GridCell.Tab.3.right" timestamp="1602475190370">
+    <state width="2517" height="363" key="GridCell.Tab.3.right" timestamp="1602576778908">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="388" key="GridCell.Tab.3.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475190370" />
+    <state width="2517" height="363" key="GridCell.Tab.3.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576778908" />
     <state width="2517" height="388" key="GridCell.Tab.3.right/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
     <state x="1123" y="234" key="RiderGenerateDialog" timestamp="1602506341500">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
     <state x="1123" y="234" key="RiderGenerateDialog/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602506341500" />
-    <state x="2560" y="0" width="809" height="1080" key="dock-window-1" timestamp="1602512987649">
+    <state x="2553" y="0" width="1472" height="1087" key="dock-window-1" timestamp="1602576580712">
       <screen x="2560" y="0" width="2560" height="1080" />
     </state>
-    <state x="2560" y="0" width="809" height="1080" key="dock-window-1/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602512987649" />
+    <state x="2553" y="0" width="1472" height="1087" key="dock-window-1/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602576580712" />
     <state x="936" y="250" key="run.anything.popup" timestamp="1602475407651">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
     <state x="936" y="250" key="run.anything.popup/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475407651" />
-    <state x="943" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1602475064567">
+    <state x="943" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1602518188477">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state x="943" y="235" width="672" height="678" key="search.everywhere.popup/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602475064567" />
+    <state x="943" y="235" width="672" height="678" key="search.everywhere.popup/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602518188477" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -325,33 +337,13 @@
           </properties>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Model/AudioFlowChartNode.cs</url>
-          <line>92</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Audio\FlowChart\Model\AudioFlowChartNode.cs" initialLine="67">
-            <startOffsets>
-              <option value="3540" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3599" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Model/AudioFlowChartNode.cs</url>
-          <line>77</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Audio\FlowChart\Model\AudioFlowChartNode.cs" initialLine="57">
-            <startOffsets>
-              <option value="3112" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3171" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
+        <watch expression="_audioFlowChart.Current" language="C#" />
+        <watch expression="_audioFlowChart.Current.Value.CashedClip" language="C#" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -13,14 +13,9 @@ namespace Audio.ClipQueue
     public class HolidayClipQueueInfo: IClipQueueInfo
     {
         /// <summary>
-        /// УИД потока, в котором произошел запрос на произведение
-        /// </summary>
-        public int FrameId { get; }
-
-        /// <summary>
         /// Узел звукового менеджера
         /// </summary>
-        public AudioFlowChartStates State { get; } = AudioFlowChartStates.HolidayNotification;
+        public AudioFlowChartStates FlowChartState { get; } = AudioFlowChartStates.HolidayNotification;
         
         /// <summary>
         /// Текущие состояние аудио-клипа
@@ -35,9 +30,8 @@ namespace Audio.ClipQueue
         private CalendarEventData _calendarEventData;
         private readonly string _sourceId;
         
-        public HolidayClipQueueInfo(int frameId, CalendarEventData eventData)
+        public HolidayClipQueueInfo(CalendarEventData eventData)
         {
-            FrameId = frameId;
             _calendarEventData = eventData;
             _sourceId = _calendarEventData.SourceId;
         }
@@ -48,6 +42,8 @@ namespace Audio.ClipQueue
         public AudioClip CheckClip(out bool success)
         {
             success = false;
+            ClipState = QueuedClipStates.Loading;
+            
             EventManager.AddHandler(EventType.HolidaySoundLoaded, OnSoundLoaded);
             HolidaySoundManager.DownloadSoundFromResource(_calendarEventData);
 
@@ -63,15 +59,15 @@ namespace Audio.ClipQueue
                 return;
 
             Clip = (AudioClip) args[0];
-            ClipState = QueuedClipStates.Loading;
+            ClipState = QueuedClipStates.Playing;
         }
         
         #region IDisposable Support
-        public bool DisposedValue { get; private set; }
+        public bool IsDisposed { get; private set; }
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!DisposedValue)
+            if (!IsDisposed)
             {
                 if (disposing)
                 {
@@ -79,7 +75,7 @@ namespace Audio.ClipQueue
                     Clip = null;
                     EventManager.RemoveHandler(EventType.HolidaySoundLoaded, OnSoundLoaded);
                 }
-                DisposedValue = true;
+                IsDisposed = true;
             }
         }
         public void Dispose()

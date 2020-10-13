@@ -45,6 +45,7 @@
             </e>
             <e p="Extensions" t="Include">
               <e p="DictionaryExtensions.cs" t="Include" />
+              <e p="TreeNodeExtensions.cs" t="Include" />
             </e>
             <e p="FlowChart" t="Include">
               <e p="Model" t="Include">

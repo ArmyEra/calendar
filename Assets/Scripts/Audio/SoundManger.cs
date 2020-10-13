@@ -57,8 +57,8 @@ namespace Audio
                 {
                     var startTime = Time.time;
                     yield return new WaitUntil(() => WaitClipLoaded(startTime, info));
-                    if(info != null && !info.IsDisposed)
-                        clip = info.Clip;
+                    if(!info?.IsDisposed ?? false)
+                        clip = info.Clip; 
                 }
 
                 if (clip != null)

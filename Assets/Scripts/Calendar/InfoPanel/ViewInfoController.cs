@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Audio;
@@ -43,6 +44,7 @@ namespace Calendar.InfoPanel
                 : _infoPanelController; 
         private InfoPanelController _infoPanelController;
 
+        private bool _isReadyToDraw;
         private bool _startInitialized;
 
         public void Initialize()
@@ -62,6 +64,11 @@ namespace Calendar.InfoPanel
             _startInitialized = true;
         }
 
+        private void Start()
+        {
+            _isReadyToDraw = true;
+        }
+
         private void OnDestroy()
         {
             EventManager.RemoveHandler(EventType.OnDateChanged, OnDayChanged);
@@ -75,11 +82,11 @@ namespace Calendar.InfoPanel
         private void OnDayChanged(params object[] args)
         {
             var date = (DateTime) args[0];
-            OnDayOrCalendarTypeChanged(new UniqEventInfo
+            StartCoroutine(OnDayOrCalendarTypeChanged(new UniqEventInfo
             {
                 Date = date,
                 CalendarEventType = MainPageController.ActiveInfo.CalendarEventType
-            });
+            }));
             
             PlayNodeEvents(date);
         }
@@ -90,20 +97,22 @@ namespace Calendar.InfoPanel
         private void OnCalendarTypeChanged(params object[] args)
         {
             title.text = (string) args[1];
-            OnDayOrCalendarTypeChanged(new UniqEventInfo
+            StartCoroutine(OnDayOrCalendarTypeChanged(new UniqEventInfo
             {
                 Date = MainPageController.ActiveInfo.Date,
                 CalendarEventType = (CalendarEventTypes) args[0]
-            });
+            }));
         }
 
         /// <summary>
         /// При изменении дня и типа выводимой информации
         /// </summary>
-        private void OnDayOrCalendarTypeChanged(UniqEventInfo uniqEventInfo)
+        private IEnumerator OnDayOrCalendarTypeChanged(UniqEventInfo uniqEventInfo)
         {
+            yield return new WaitUntil(()=> _isReadyToDraw);
+            
             if(!uniqEventInfo.IsValidate || uniqEventInfo.Equals(_lastSetUniqEventInfo))
-                return;
+                yield break;
 
             _lastSetUniqEventInfo = uniqEventInfo;
             
@@ -193,10 +202,11 @@ namespace Calendar.InfoPanel
 
             var textItem = Instantiate(textTemplate, rectContainer);
             textItem.SetActive(true);
+            var rectTextItem = textItem.GetComponent<RectTransform>();
+            
             textItem.GetComponent<Text>().text = text;
             textItem.GetComponent<ContentSizeFitter>().SetLayoutVertical();
-
-            var rectTextItem = textItem.GetComponent<RectTransform>();
+            
             rectTextItem.anchoredPosition = _lastPosition;
 
             _lastPosition -= new Vector2(0, rectTextItem.rect.height + marginItems);

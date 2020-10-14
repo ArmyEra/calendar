@@ -106,18 +106,29 @@ namespace Data.Calendar
             //Directory.CreateDirectory(Params.HolidaySoundPath(SourceId));
         }
 
-        /// <summary>
-        /// Принадлежит ли событие указанной дате 
-        /// </summary>
-        public bool ThisDay(DateTime compareDate)
-            => DateTime.Date == compareDate.Date;
+        // /// <summary>
+        // /// Принадлежит ли событие указанной дате (полное совпадение, включая год)
+        // /// </summary>
+        // public bool ThisFullDate(DateTime compareDate)
+        //     => DateTime.Date == compareDate.Date;
 
+        /// <summary>
+        /// Принадлежит ли событие указанной дате (совпадения по дню и месяцу)
+        /// </summary>
+        public bool ThisDayAndMonth(DateTime compareDate)
+            => DateTime.Date == compareDate.Date && DateTime.Month == compareDate.Month;
+        
         /// <summary>
         /// Принадлежит ли событие месяцу указанной даты 
         /// </summary>
-        public bool ThisMonth(DateTime compareDate)
-            => DateTime.Year == compareDate.Year && DateTime.Month == compareDate.Month;
-
+        public bool ThisMonthAndYear(DateTime compareDate)
+            => DateTime.Year == compareDate.Year && DateTime.Month == compareDate.Month;/// <summary>
+        
+        /// Принадлежит ли событие месяцу указанной даты 
+        /// </summary>
+        public bool ThisMonthOnly(DateTime compareDate)
+            => DateTime.Month == compareDate.Month;
+        
         /// <summary>
         /// Генерирует УИД события, который является относительным путем к аудио-сообщению
         /// </summary>

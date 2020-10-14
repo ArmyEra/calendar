@@ -57,18 +57,20 @@ namespace Calendar.InfoPanel.Tabs
             var date = (DateTime) args[0];
             var eventTypes = InfoPanelController
                 .GetDayEventDatas(date)
-                .GetAvailableTypes();
+                .GetAvailableTypes()
+                .ToArray();
             
-            SetTabsVisible(eventTypes);
+            SetTabsVisible(in eventTypes);
         }
 
         /// <summary>
         /// Устанавливает видимость вкладки 
         /// </summary>
-        private void SetTabsVisible(IEnumerable<CalendarEventTypes> existedEventTypes)
+        private void SetTabsVisible(in CalendarEventTypes[] existedEventTypes)
         {
             //_monthEvents.GetAvailableTypes()
-            foreach (var tab in tabs.Where(t => t.calendarEventType != CalendarEventTypes.Notes))
+            var mappedTabs = tabs.Where(CalendarEventTypesExtensions.SelectByType(CalendarEventTypes.ScienceDay, CalendarEventTypes.MilitaryMemoryDay));
+            foreach (var tab in mappedTabs)
                 tab.SetVisible(existedEventTypes.Any(et => et == tab.calendarEventType));
 
             InvokeFirstClick();

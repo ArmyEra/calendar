@@ -29,7 +29,6 @@ namespace Calendar.InfoPanel
             _monthEvents.Add(dataEvent);
         }
 
-        
         /// <summary>
         /// Возвращает события на конкретную дату 
         /// </summary>

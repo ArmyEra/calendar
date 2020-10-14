@@ -106,6 +106,7 @@
               <e p="AudioFlowChartStateExtensions.cs" t="Include" />
             </e>
             <e p="CalendarEventDataExtensions.cs" t="Include" />
+            <e p="CalendarEventTypesExtensions.cs" t="Include" />
             <e p="DateTimeExtensions.cs" t="Include" />
             <e p="Vector2Extensions.cs" t="Include" />
           </e>

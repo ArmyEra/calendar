@@ -98,7 +98,6 @@ namespace Data.Calendar
         public void Initialize()
         {
             DateTime = stringDate.GetDateTime();
-            
             SourceId = GenerateSourceId(this);
         }
 

@@ -146,10 +146,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/MainPageController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/CalendarEventTypesExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/CalendarEventDataExtensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/Calendar/CalendarEventsContainer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/ViewInfoController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/DatePanel/DateItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/TabsController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/Calendar/CalendarEventsContainer.cs" />
       </list>
     </option>
   </component>
@@ -185,10 +185,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="9436">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="9436" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -238,6 +238,7 @@
       <workItem from="1602683958707" duration="309000" />
       <workItem from="1602685950260" duration="3535000" />
       <workItem from="1602694873514" duration="573000" />
+      <workItem from="1602695978000" duration="70000" />
     </task>
     <servers />
   </component>
@@ -342,18 +343,18 @@
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
     <state x="1123" y="234" key="RiderGenerateDialog/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602506341500" />
-    <state x="2552" y="-8" width="1296" height="1096" key="dock-window-1" timestamp="1602695202674">
+    <state x="2552" y="-8" width="1296" height="1096" key="dock-window-1" timestamp="1602696047707">
       <screen x="2560" y="0" width="2560" height="1080" />
     </state>
-    <state x="2552" y="-8" width="1296" height="1096" key="dock-window-1/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695202674" />
+    <state x="2552" y="-8" width="1296" height="1096" key="dock-window-1/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602696047707" />
     <state x="936" y="250" key="run.anything.popup" timestamp="1602598359864">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
     <state x="936" y="250" key="run.anything.popup/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602598359864" />
-    <state x="943" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1602676111379">
+    <state x="943" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1602696014599">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state x="943" y="235" width="672" height="678" key="search.everywhere.popup/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602676111379" />
+    <state x="943" y="235" width="672" height="678" key="search.everywhere.popup/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602696014599" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

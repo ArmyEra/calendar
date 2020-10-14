@@ -81,7 +81,7 @@ namespace Calendar
         /// <summary>
         /// Воспроизвести Приветствие 
         /// </summary>
-        private void PlayHello()
+        private static void PlayHello()
         {
             var soundType = DateTimeSoundManager.GetGreetingSoundType();
             SoundManger.PlayQueued(soundType);
@@ -134,4 +134,3 @@ namespace Calendar
         #endregion
     }
 }
-

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Globalization;
+using Core;
 using UnityEngine;
 using UnityEngine.UI;
+using EventType = Core.EventType;
 
 namespace Calendar.DatePanel
 {
@@ -11,6 +13,16 @@ namespace Calendar.DatePanel
         [SerializeField] private Text yearHeader;
         [SerializeField] private Text monthHeader;
         [SerializeField] private DateContainer dateContainer;
+
+        private void Start()
+        {
+            EventManager.AddHandler(EventType.BeforeMonthChanged, BeforeMonthChanged);
+        }
+
+        private void OnDestroy()
+        {
+            EventManager.RemoveHandler(EventType.BeforeMonthChanged, BeforeMonthChanged);
+        }
 
         public void Initialize(in DateTime monthDate)
         {
@@ -26,17 +38,23 @@ namespace Calendar.DatePanel
             monthHeader.text = currentCulture.TextInfo.ToTitleCase(currentCulture.DateTimeFormat.GetMonthName(monthDate.Month)); 
         }
 
+        private void BeforeMonthChanged(params object[] args)
+        {
+            var monthIncrement = (int) args[0];
+            dateContainer.DestroyItems(monthIncrement);
+        }
+
         #region TESTUPDATE
 
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                dateContainer.DestroyItems(1);
+                BeforeMonthChanged(1);
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                dateContainer.DestroyItems(-1);
+                BeforeMonthChanged(-1);
             }
         }
 

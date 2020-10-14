@@ -1739,19 +1739,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 1065984657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b5f49d21f414c2084851fd32215612b, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b584cd0bafc4b598bda7716d0b6b0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   touchGrid:
-    rows: 0
-    columns: 0
+    rows: 2
+    columns: 2
   data:
-    enableOnPC: 0
+    enableOnPC: 1
     sendTouches: 0
     continuingSwipe: 0
-    calculateVectorOnSend: 0
+    calculateVectorOnSend: 1
     useEightDirections: 0
-    minSwipeLength: 0
+    minSwipeLength: 200
+  monthChangeCondition:
+    lengthCondition:
+      checkMinLength: 0
+      checkMaxLength: 0
+      minLength: 0
+      maxLength: 0
+    timeCondition:
+      isUsed: 0
+      inBounds: 0
+      deltaTime: 0
+    gridCondition:
+      isUsed: 1
+      initializedFromInspector: 1
+      cellDependenceData:
+      - startIndex: 0
+        finishIndexes: 0000000002000000
+      - startIndex: 2
+        finishIndexes: 0200000000000000
 --- !u!1 &1075785787
 GameObject:
   m_ObjectHideFlags: 0

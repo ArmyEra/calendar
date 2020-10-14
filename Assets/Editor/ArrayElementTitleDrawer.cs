@@ -9,60 +9,59 @@ public class ArrayElementTitleDrawer : PropertyDrawer
     {
         return EditorGUI.GetPropertyHeight(property, label, true);
     }
-    protected virtual ArrayElementTitleAttribute Atribute
-    {
-        get { return (ArrayElementTitleAttribute)attribute; }
-    }
+    protected virtual ArrayElementTitleAttribute Atribute => (ArrayElementTitleAttribute)attribute;
 
     SerializedProperty TitleNameProp;
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        ArrayElementTitleAttribute _attr = Atribute;
-        string newLabel = "";
+        var attr = Atribute;
+        var newLabel = "";
 
-        if(_attr.Varnames.Length == 0)
+        switch (attr.Varnames.Length)
         {
-            TitleNameProp = property.serializedObject.FindProperty(property.propertyPath);
-            newLabel = GetTitle();
-            if (string.IsNullOrEmpty(newLabel))
-                newLabel = label.text.Split(' ')[1];
-            //EditorGUI.PropertyField(position, property, new GUIContent(newLabel, label.tooltip), true);
-            //return;
-        }
-        else if(_attr.Varnames.Length == 1)
-        {
-            string FullPathName = string.Format("{0}.{1}", property.propertyPath, _attr.Varnames[0]);
-            TitleNameProp = property.serializedObject.FindProperty(FullPathName);
-            newLabel = GetTitle();
-        }
-        else
-        {
-            foreach (string varname in _attr.Varnames)
+            case 0:
             {
-                string FullPathName = string.Format("{0}.{1}", property.propertyPath, varname);
-                TitleNameProp = property.serializedObject.FindProperty(FullPathName);
-
-                string title = GetTitle();
-                if (string.IsNullOrEmpty(title))
-                    continue;
-
-                if (_attr.switchmode)
+                TitleNameProp = property.serializedObject.FindProperty(property.propertyPath);
+                newLabel = GetTitle();
+                if (string.IsNullOrEmpty(newLabel))
+                    newLabel = label.text.Split(' ')[1];
+                break;
+            }
+            case 1:
+            {
+                var fullPathName = $"{property.propertyPath}.{attr.Varnames[0]}";
+                TitleNameProp = property.serializedObject.FindProperty(fullPathName);
+                newLabel = GetTitle();
+                break;
+            }
+            default:
+            {
+                foreach (var varName in attr.Varnames)
                 {
-                    newLabel = title;
-                    break;
+                    var fullPathName = $"{property.propertyPath}.{varName}";
+                    TitleNameProp = property.serializedObject.FindProperty(fullPathName);
+
+                    string title = GetTitle();
+                    if (string.IsNullOrEmpty(title))
+                        continue;
+
+                    if (attr.switchmode)
+                    {
+                        newLabel = title;
+                        break;
+                    }
+                    newLabel += $"{title}|";
                 }
-                else
-                {
-                    newLabel += string.Format("{0}|", title);
-                }
+
+                break;
             }
         }
         if (string.IsNullOrEmpty(newLabel))
             newLabel = label.text;
 
-        if (_attr.baseHeader != "")
-            newLabel = string.Format("{0} {1}", _attr.baseHeader, newLabel);
+        if (attr.baseHeader != "")
+            newLabel = $"{attr.baseHeader} {newLabel}";
 
         EditorGUI.PropertyField(position, property, new GUIContent(newLabel, label.tooltip), true);
     }

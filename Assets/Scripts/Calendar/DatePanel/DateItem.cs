@@ -3,7 +3,6 @@ using Calendar.DatePanel.Utils;
 using Core;
 using UnityEngine;
 using UnityEngine.UI;
-using Utils;
 using EventType = Core.EventType;
 
 namespace Calendar.DatePanel

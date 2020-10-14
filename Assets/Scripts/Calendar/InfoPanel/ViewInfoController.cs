@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Audio;
 using Audio.CashedSounds.Default.Utils;
-using Calendar.DatePanel;
 using Calendar.InfoPanel.Utils;
 using Calendar.Utils;
 using Core;
@@ -12,7 +11,6 @@ using Data.Calendar;
 using Extensions;
 using UnityEngine;
 using UnityEngine.UI;
-using Utils;
 using EventType = Core.EventType;
 
 namespace Calendar.InfoPanel

@@ -1,11 +1,8 @@
 ﻿using System;
-using System.IO;
 using Calendar.InfoPanel.Utils;
 using Extensions;
 using SpeechKitApi.Utils;
 using UnityEngine;
-using Utils;
-using Params = Audio.Utils.Params;
 
 namespace Data.Calendar
 {
@@ -101,22 +98,14 @@ namespace Data.Calendar
         public void Initialize()
         {
             DateTime = stringDate.GetDateTime();
-            
             SourceId = GenerateSourceId(this);
-            //Directory.CreateDirectory(Params.HolidaySoundPath(SourceId));
         }
-
-        // /// <summary>
-        // /// Принадлежит ли событие указанной дате (полное совпадение, включая год)
-        // /// </summary>
-        // public bool ThisFullDate(DateTime compareDate)
-        //     => DateTime.Date == compareDate.Date;
 
         /// <summary>
         /// Принадлежит ли событие указанной дате (совпадения по дню и месяцу)
         /// </summary>
         public bool ThisDayAndMonth(DateTime compareDate)
-            => DateTime.Date == compareDate.Date && DateTime.Month == compareDate.Month;
+          => DateTime.Day == compareDate.Day && DateTime.Month == compareDate.Month;
         
         /// <summary>
         /// Принадлежит ли событие месяцу указанной даты 

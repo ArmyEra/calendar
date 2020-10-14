@@ -8,7 +8,6 @@ namespace Calendar.DatePanel
     public class DatePanelController : MonoBehaviour
     {
         [Header("Настройки элементов панели")]
-        [SerializeField] private Text yearHeader;
         [SerializeField] private Text monthHeader;
         [SerializeField] private DateContainer dateContainer;
 
@@ -20,8 +19,6 @@ namespace Calendar.DatePanel
 
         private void SetUpHeaders(in DateTime monthDate)
         {
-            yearHeader.text = monthDate.Year.ToString();
-            
             var currentCulture = CultureInfo.CurrentCulture;
             monthHeader.text = currentCulture.TextInfo.ToTitleCase(currentCulture.DateTimeFormat.GetMonthName(monthDate.Month)); 
         }

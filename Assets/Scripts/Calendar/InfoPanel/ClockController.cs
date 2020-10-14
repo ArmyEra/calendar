@@ -10,7 +10,7 @@ namespace Calendar.InfoPanel
         private const int UpdateRate = 60;
         
         [SerializeField] private Text timeTextComponent;
-        
+        [SerializeField] private Text dayTextComponent;
 
         private int DelayInvoking => (UpdateRate - DateTime.Now.Second) + 1;
         
@@ -29,7 +29,7 @@ namespace Calendar.InfoPanel
         private void Execute()
         {
             var now = DateTime.Now;
-            
+            dayTextComponent.text = $"{now.Day}";
             timeTextComponent.text = now.ToShortTimeString();
         }
     }

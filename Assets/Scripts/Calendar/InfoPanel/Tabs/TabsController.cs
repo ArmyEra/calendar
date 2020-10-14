@@ -67,7 +67,6 @@ namespace Calendar.InfoPanel.Tabs
         /// </summary>
         private void SetTabsVisible(IEnumerable<CalendarEventTypes> existedEventTypes)
         {
-            //_monthEvents.GetAvailableTypes()
             foreach (var tab in tabs.Where(t => t.calendarEventType != CalendarEventTypes.Notes))
                 tab.SetVisible(existedEventTypes.Any(et => et == tab.calendarEventType));
 

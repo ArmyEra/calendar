@@ -30,7 +30,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AE22A4E8-F83C-41D6-9684-AE7F557133D9/44/e3bdae05/Queue`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E98ED036-8295-432E-8C11-E52D6243EE11/0b/f14ed990/WaitUntil.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/source/repos/TestYandexSpeachKit/SpeechKitApi/Utils/EnumValueNameHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5284FDBC-76B5-453D-8ED0-C1E1976638D9/e5/47134e21/ThreadManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5F9BB86D-B61F-4F4B-BC1E-3AB5F35C8275/96/8814d177/IoExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E98ED036-8295-432E-8C11-E52D6243EE11/ea/a8410911/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
@@ -75,9 +74,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/AttributeExtensions/AudioFlowChartStateExtensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/AudioFlowChartStates.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/AudioFlowChart.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Utils/AudioFlowChartStates.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/AudioFlowChart.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/AudioFlowChartInfo.cs" />
@@ -126,6 +122,9 @@
         <option value="$PROJECT_DIR$/Assets/Editor/ArrayElementTitleDrawer.cs" />
         <option value="$PROJECT_DIR$/Assets/Editor/UnityEngineSwipeControllerInspector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Swipe/SwipeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/ClockController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/DatePanel/DatePanelController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/Tab.cs" />
       </list>
     </option>
   </component>
@@ -161,10 +160,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6836">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="6836" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -205,6 +204,7 @@
       <workItem from="1602494117788" duration="15083000" />
       <workItem from="1602596895622" duration="12618000" />
       <workItem from="1602645756540" duration="2546000" />
+      <workItem from="1602653923191" duration="1807000" />
     </task>
     <servers />
   </component>
@@ -323,49 +323,6 @@
     <state x="943" y="235" width="672" height="678" key="search.everywhere.popup/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602647820178" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/ViewInfoController.cs</url>
-          <line>199</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Calendar\InfoPanel\ViewInfoController.cs" initialLine="199">
-            <startOffsets>
-              <option value="6895" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6941" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/ViewInfoController.cs</url>
-          <line>222</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Calendar\InfoPanel\ViewInfoController.cs" initialLine="222">
-            <startOffsets>
-              <option value="7677" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7724" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/ViewInfoController.cs</url>
-          <line>196</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Calendar\InfoPanel\ViewInfoController.cs" initialLine="196">
-            <startOffsets>
-              <option value="6747" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6810" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
         <watch expression="_audioFlowChart.Current" language="C#" />

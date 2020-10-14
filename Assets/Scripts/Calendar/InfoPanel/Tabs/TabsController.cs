@@ -67,7 +67,7 @@ namespace Calendar.InfoPanel.Tabs
         /// </summary>
         private void SetTabsVisible(IEnumerable<CalendarEventTypes> existedEventTypes)
         {
-            foreach (var tab in tabs.Where(t => t.calendarEventType != CalendarEventTypes.Notes))
+            foreach (var tab in tabs.Where(SelectTabByType(CalendarEventTypes.ScienceDay, CalendarEventTypes.MilitaryMemoryDay)))
                 tab.SetVisible(existedEventTypes.Any(et => et == tab.calendarEventType));
 
             InvokeFirstClick();
@@ -78,5 +78,11 @@ namespace Calendar.InfoPanel.Tabs
             tabs.First(t => t.IsVisible)
                 .OnClickAction();
         }
+        
+        /// <summary>
+        /// Возвращает функцию селектор совпадения календарных типов 
+        /// </summary>
+        private static Func<Tab, bool> SelectTabByType(params CalendarEventTypes[] types)
+            => tab => types.Any(t => t == tab.calendarEventType);
     }
 }

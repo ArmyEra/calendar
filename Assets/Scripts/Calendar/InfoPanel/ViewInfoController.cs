@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Audio;
 using Audio.CashedSounds.Default.Utils;
-using Calendar.DatePanel;
 using Calendar.InfoPanel.Utils;
 using Calendar.Utils;
 using Core;
@@ -11,7 +11,6 @@ using Data.Calendar;
 using Extensions;
 using UnityEngine;
 using UnityEngine.UI;
-using Utils;
 using EventType = Core.EventType;
 
 namespace Calendar.InfoPanel
@@ -89,7 +88,7 @@ namespace Calendar.InfoPanel
         /// </summary>
         private void OnCalendarTypeChanged(params object[] args)
         {
-            title.text = (string) args[1];
+            title.text = ((string) args[1]).ToUpper(CultureInfo.CurrentCulture);
             OnDayOrCalendarTypeChanged(new UniqEventInfo
             {
                 Date = MainPageController.ActiveInfo.Date,

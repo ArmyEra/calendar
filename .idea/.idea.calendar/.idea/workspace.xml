@@ -74,10 +74,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Utils/AudioFlowChartStates.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/AudioFlowChart.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/AudioFlowChartInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/AudioFlowChartRootInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/AudioFlowChartRootNode.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/TreeModel/AudioFlowChart.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/TreeModel/AudioFlowChartRootNode.cs" />
@@ -124,7 +120,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Swipe/SwipeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/ClockController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/DatePanel/DatePanelController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Utils/CalendarEventTypes.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/TabsController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/Tab.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/ViewInfoController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/SwitchTab.cs" />
       </list>
     </option>
   </component>
@@ -204,7 +204,7 @@
       <workItem from="1602494117788" duration="15083000" />
       <workItem from="1602596895622" duration="12618000" />
       <workItem from="1602645756540" duration="2546000" />
-      <workItem from="1602653923191" duration="1807000" />
+      <workItem from="1602653923191" duration="3438000" />
     </task>
     <servers />
   </component>

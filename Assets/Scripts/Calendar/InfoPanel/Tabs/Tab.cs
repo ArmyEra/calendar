@@ -11,21 +11,11 @@ namespace Calendar.InfoPanel.Tabs
     {
         public CalendarEventTypes calendarEventType;
 
-        public bool IsVisible { get; private set; } = true;
+        public virtual bool IsVisible { get; protected set; } = true;
         
         private Button _button;
         private string _typeDescription;
         
-        private void Start()
-        {
-            EventManager.AddHandler(EventType.OnCalendarEventTypeChanged, OnCalendarEventChange);
-        }
-
-        private void OnDestroy()
-        {
-            EventManager.RemoveHandler(EventType.OnCalendarEventTypeChanged, OnCalendarEventChange);
-        }
-
         /// <summary>
         /// Иницицализация вкладки
         /// </summary>
@@ -38,7 +28,7 @@ namespace Calendar.InfoPanel.Tabs
         /// <summary>
         /// Устанавливает, является ли вкладка видимой 
         /// </summary>
-        public void SetVisible(bool value)
+        public virtual void SetVisible(bool value)
         {
             IsVisible = value;
             gameObject.SetActive(value);  
@@ -71,14 +61,6 @@ namespace Calendar.InfoPanel.Tabs
         public void OnClickAction()
         {
             EventManager.RaiseEvent(EventType.OnCalendarEventTypeChanged, calendarEventType, _typeDescription);
-        }
-
-        /// <summary>
-        /// При изменении типа календарного события
-        /// </summary>
-        private void OnCalendarEventChange(params object[] args)
-        {
-            _button.interactable = calendarEventType != (CalendarEventTypes) args[0];
         }
     }
 }

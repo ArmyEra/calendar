@@ -4,6 +4,7 @@ namespace Calendar.InfoPanel.Utils
 {
     public enum CalendarEventTypes
     {
+        [EnumValueString("Выберите вкладку")]
         Null,
         
         [EnumValueString("Дни воиской славы и памятные даты")]

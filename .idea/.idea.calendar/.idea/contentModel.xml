@@ -79,6 +79,7 @@
               <e p="InfoPanelController.cs" t="Include" />
               <e p="Tabs" t="Include">
                 <e p="NewNodePanel.cs" t="Include" />
+                <e p="SwitchTab.cs" t="Include" />
                 <e p="Tab.cs" t="Include" />
                 <e p="TabsController.cs" t="Include" />
               </e>

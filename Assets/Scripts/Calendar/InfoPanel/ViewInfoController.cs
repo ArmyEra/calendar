@@ -109,7 +109,8 @@ namespace Calendar.InfoPanel
         /// </summary>
         private IEnumerator OnDayOrCalendarTypeChanged(UniqEventInfo uniqEventInfo)
         {
-            yield return new WaitUntil(()=> _isReadyToDraw);
+            if(!_isReadyToDraw)
+                yield return new WaitUntil(()=> _isReadyToDraw);
             
             if(!uniqEventInfo.IsValidate || uniqEventInfo.Equals(_lastSetUniqEventInfo))
                 yield break;
@@ -133,7 +134,7 @@ namespace Calendar.InfoPanel
         {
             var calendarEvents = InfoPanelController.GetDayEventDatas(date);
 
-            if (calendarEvents.Any(ev => ev.calendarEventType == CalendarEventTypes.Notes))
+            if (calendarEvents.IsOneOfType(CalendarEventTypes.Notes))
             {
                 var intoSound = DateTimeSoundManager.GetInto(date);
                 SoundManger.PlayQueued(intoSound, DefaultSoundType.ScheduledEvent);
@@ -148,7 +149,7 @@ namespace Calendar.InfoPanel
             if(calendarEvents.Length == 0)
                 return;
             
-            if(calendarEvents.GetAvailableTypes().All(t => t == CalendarEventTypes.Notes))
+            if(calendarEvents.IsAllOfType(CalendarEventTypes.Notes))
                 return;
             
             SoundManger.PlayQueued(DateTimeSoundManager.GetInto(date), DefaultSoundType.HolidayProcess);

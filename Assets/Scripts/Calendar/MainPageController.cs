@@ -70,7 +70,7 @@ namespace Calendar
         {
             _shownMonth = date.Date.FirstMonthDate();
             
-            var monthEvents = holidayCalendarEvents.datas.GetMonthEvents(date)
+            var monthEvents = holidayCalendarEvents.datas.GetMonthHolidays(date)
                 .Concat(scheduledCalendarEvents.datas.GetMonthEvents(date))
                 .ToArray();
             infoPanelController.Initialize(date, monthEvents);

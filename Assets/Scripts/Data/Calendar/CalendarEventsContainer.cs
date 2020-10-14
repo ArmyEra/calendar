@@ -105,7 +105,7 @@ namespace Data.Calendar
         /// Принадлежит ли событие указанной дате (совпадения по дню и месяцу)
         /// </summary>
         public bool ThisDayAndMonth(DateTime compareDate)
-            => DateTime.Day == compareDate.Day && DateTime.Month == compareDate.Month;
+          => DateTime.Day == compareDate.Day && DateTime.Month == compareDate.Month;
         
         /// <summary>
         /// Принадлежит ли событие месяцу указанной даты 

@@ -40,7 +40,7 @@ namespace Extensions
         {
             var lastMonth = date.Month == 12;
             var yearInc = lastMonth ? 1 : 0;
-            var monthInc = lastMonth ? 0 : 1;
+            var monthInc = lastMonth ? -11 : 1;
             
             return new DateTime(date.Year + yearInc, date.Month + monthInc, 1).AddDays(-1);
         }

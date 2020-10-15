@@ -16,11 +16,17 @@ namespace Settings.Save
         [SerializeField] private CalendarEventsContainer scheduledEventContainer;
 
         /// <summary>
+        /// Информация, подлежащая сохранениею в PlayerPrefs
+        /// </summary>
+        public SaveInfo SaveInfo { get; private set; }
+        
+        /// <summary>
         /// Загружкает данные
         /// </summary>
         public void LoadApplicationData()
         {
-            var savedNotes = (DataManager.Load<SaveInfo>(saveInfoKey) ?? SaveInfo.New).notes;
+            SaveInfo = DataManager.Load<SaveInfo>(saveInfoKey) ?? SaveInfo.New;
+            var savedNotes = SaveInfo.notes;
             foreach (var note in savedNotes)
                 SaveToContainer(note);
         }
@@ -51,17 +57,7 @@ namespace Settings.Save
         /// </summary>
         public void SaveToPrefs()
         {
-            var saveInfo = new SaveInfo
-            {
-                notes = NoteInfo.FromCalendarEventsContainer(scheduledEventContainer)
-            };
-
-            DataManager.Save(saveInfo, saveInfoKey);
-        }
-
-        private void OnDisable()
-        {
-            SaveToPrefs();
+            DataManager.Save(SaveInfo, saveInfoKey);
         }
     }
 }

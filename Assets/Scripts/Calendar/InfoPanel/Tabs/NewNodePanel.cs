@@ -71,12 +71,15 @@ namespace Calendar.InfoPanel.Tabs
             if(string.IsNullOrEmpty(text))
                 return;
 
-            var newNoteEvent = CalendarEventData.NewNote(
-                new NoteInfo(MainPageController.ActiveInfo.Date, text));
+            var newNoteInfo = new NoteInfo(MainPageController.ActiveInfo.Date, text);  
+            var newNoteEvent = CalendarEventData.NewNote(newNoteInfo);
             
             var success = SaveManager.Instance.SaveToContainer(newNoteEvent);
             if (!success)
                 return;
+            
+            SaveManager.Instance.SaveInfo.notes.Add(newNoteInfo);
+            SaveManager.Instance.SaveToPrefs();
             
             EventManager.RaiseEvent(EventType.CalendarEventAdd, newNoteEvent);
             SoundManger.PlayQueued(DefaultSoundType.EventAdded);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace Settings.Save.Model
@@ -7,11 +8,11 @@ namespace Settings.Save.Model
     public class SaveInfo
     {
         [JsonRequired]
-        public NoteInfo[] notes;
+        public List<NoteInfo> notes;
 
         public static SaveInfo New => new SaveInfo
         {
-            notes = new NoteInfo[0]
+            notes = new List<NoteInfo>()
         };
     }
 }

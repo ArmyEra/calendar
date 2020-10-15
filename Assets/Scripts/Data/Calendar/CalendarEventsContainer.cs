@@ -1,6 +1,8 @@
 ﻿using System;
 using Calendar.InfoPanel.Utils;
 using Extensions;
+using Settings.Save;
+using Settings.Save.Model;
 using SpeechKitApi.Utils;
 using UnityEngine;
 
@@ -50,7 +52,7 @@ namespace Data.Calendar
         /// <summary>
         /// Необходимо ли сохранять в PlayerPrefs 
         /// </summary>
-        public bool NeedSave { get; }
+        public bool NeedSave { get; private set; }
         
         /// <summary>
         /// Тип события
@@ -78,19 +80,7 @@ namespace Data.Calendar
         /// </summary>
         [SerializeField] private string stringDate;
         
-        /// <summary>
-        /// Инициализаця нового элемента, который будем сохранять в настройки 
-        /// </summary>
-        public CalendarEventData(CalendarEventTypes newCalendarEventType, DateTime newDateTime)
-        {
-            calendarEventType = newCalendarEventType;
-            DateTime = newDateTime;
-            stringDate = newDateTime.ToString(DateTimeExtensions.ConvertDateTimeFormat);
-            headerInfo = "New node";
-            
-            SourceId = GenerateSourceId(this);
-            NeedSave = true;
-        }
+        private CalendarEventData(){}
         
         /// <summary>
         /// Инициализация данных: формирует дату из строкового представления
@@ -100,6 +90,12 @@ namespace Data.Calendar
             DateTime = stringDate.GetDateTime();
             SourceId = GenerateSourceId(this);
         }
+
+        /// <summary>
+        /// Принадлежит ли событие указанной дате (полное совпадение)
+        /// </summary>
+        public bool ThisDate(DateTime compareDate)
+            => DateTime.Date == compareDate;
 
         /// <summary>
         /// Принадлежит ли событие указанной дате (совпадения по дню и месяцу)
@@ -117,6 +113,32 @@ namespace Data.Calendar
         /// </summary>
         public bool ThisMonthOnly(DateTime compareDate)
             => DateTime.Month == compareDate.Month;
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is CalendarEventData eventData))
+                return false;
+
+            return eventData.SourceId == SourceId && eventData.textInfo == textInfo;
+        }
+
+        /// <summary>
+        /// Инициализаця нового элемента, который будем сохранять в настройки 
+        /// </summary>
+        public static CalendarEventData NewNote(NoteInfo noteInfo)
+        {
+            var newEvent = new CalendarEventData
+            {
+                calendarEventType = CalendarEventTypes.Notes,
+                headerInfo = "New note",
+                stringDate = noteInfo.stringDate,
+                textInfo = noteInfo.textInfo,
+                DateTime = noteInfo.stringDate.GetDateTime(),
+                NeedSave = true
+            };
+            newEvent.SourceId = GenerateSourceId(newEvent);
+            return newEvent;
+        }
         
         /// <summary>
         /// Генерирует УИД события, который является относительным путем к аудио-сообщению

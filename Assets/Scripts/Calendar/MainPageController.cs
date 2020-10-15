@@ -111,8 +111,6 @@ namespace Calendar
         private void OnCalendarEventAdd(params object[] args)
         {
             var newCalendarEvent = (CalendarEventData) args[0];
-            var index = (int) args[1];
-            CalendarEventsContainers[index].AddNew(newCalendarEvent);
             infoPanelController.UpdateEvents(newCalendarEvent);
         }
 

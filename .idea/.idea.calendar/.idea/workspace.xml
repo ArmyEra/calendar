@@ -31,16 +31,18 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5F9BB86D-B61F-4F4B-BC1E-3AB5F35C8275/a1/f394ab5d/SynthesisQuality.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/source/repos/TestYandexSpeachKit/UnityEngineSwipeDetector/UnityEngineSwipeController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BC2876E8-FF0B-42A2-A2A1-1B51F2B23C8A/d8/446a4902/Microphone.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Settings/Save/Model/SaveInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/2019.3.15/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/LayoutUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E98ED036-8295-432E-8C11-E52D6243EE11/2c/7d913dc7/Debug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/2019.3.15/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/87/ee540eba/IntrospectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E98ED036-8295-432E-8C11-E52D6243EE11/78/f9e56647/Logger.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Settings/Save/Model/NoteInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34EDF1BA-24F1-4957-B8F8-B66A28C87077/ea/f7720380/Infinity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/704BABAA-7696-4062-81C7-3643735F7733/40/22c2f0ff/MouseSwipeDetector.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AE22A4E8-F83C-41D6-9684-AE7F557133D9/89/043a8d91/LinkedList`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5F9BB86D-B61F-4F4B-BC1E-3AB5F35C8275/e2/b6aaeebb/SpeechKitClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/538B2D01-3E8F-4510-AC0E-6F0D9312B2F8/f8/61e15d63/MouseSwipeDetector.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5F9BB86D-B61F-4F4B-BC1E-3AB5F35C8275/e2/b6aaeebb/SpeechKitClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34EDF1BA-24F1-4957-B8F8-B66A28C87077/74/4c7e5de0/Singleton`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/b2/eb736cdb/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AE22A4E8-F83C-41D6-9684-AE7F557133D9/44/e3bdae05/Queue`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -51,25 +53,24 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/704BABAA-7696-4062-81C7-3643735F7733/6a/de3973e0/Condition.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5284FDBC-76B5-453D-8ED0-C1E1976638D9/e5/47134e21/ThreadManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/704BABAA-7696-4062-81C7-3643735F7733/8c/3fe33d4b/LengthCondition.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5F9BB86D-B61F-4F4B-BC1E-3AB5F35C8275/96/8814d177/IoExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E98ED036-8295-432E-8C11-E52D6243EE11/ea/a8410911/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5F9BB86D-B61F-4F4B-BC1E-3AB5F35C8275/96/8814d177/IoExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/704BABAA-7696-4062-81C7-3643735F7733/5a/ed8c2a85/SwipeInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/f3/a42153b2/Exception.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/source/repos/TestYandexSpeachKit/SpeechKitApi/SpeechKitClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/251AA2EA-82F7-4926-A140-F6243E159BC7/d5/0c2330d7/EnumValueNameHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DEB99CD0-47DF-4EC9-BD97-7C0E0DD72784/9d/28bc53e6/SpeechKitClient.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/67/2c49800a/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/source/repos/TestYandexSpeachKit/TreeModule/TreeNode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/50FE65A4-93A0-4952-84F1-E3562EFBE38D/67/2c49800a/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9DCB8D0E-5727-4007-AB00-B5EB5611060C/87/66850f12/UnityEngineSwipeController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E98ED036-8295-432E-8C11-E52D6243EE11/00/c2bad153/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/CashedSounds/Default/Utils/DateTimeSoundManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/15/5b782c02/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9DCB8D0E-5727-4007-AB00-B5EB5611060C/1b/790829f3/InputGrid.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E98ED036-8295-432E-8C11-E52D6243EE11/d3/011c011a/InvokableCall.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/source/repos/TestYandexSpeachKit/TreeModule/TreeRootNode.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/36/c32502b0/SystemException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/351E49E2-A5BF-4FD6-BEAB-B458CE2255F3/f2/a50ce978/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/36/c32502b0/SystemException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/2019.3.15/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/92/d30c6a73/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/84/c4f7e0e3/List`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -100,15 +101,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Model/AudioFlowChartRootNode.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/ClipQueueCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/ClipQueue/HolidayClipQueueInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/CashedSounds/Holiday/HolidaySoundManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/SoundManger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Extensions/TreeNodeExtentions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Model/AudioFlowChart.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/FlowChart/Model/AudioFlowChartNode.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Extensions/TreeNodeExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Common/Swipe/SwipeTouchInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Swipe/SwipeTouchInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Swipe/Extensions/ResolutionExtensions.cs" />
@@ -144,13 +136,22 @@
         <option value="$USER_HOME$/source/repos/TestYandexSpeachKit/UnityEngineSwipeDetector/Extensions/FloatExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Swipe/SwipeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/InfoPanelController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/MainPageController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/CalendarEventTypesExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/CalendarEventDataExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/ViewInfoController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/DatePanel/DateItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/TabsController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Settings/Save/SaveInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Settings/Save/NoteInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/DataManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/Calendar/CalendarEventsContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Settings/Save/Model/NoteInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/MainPageController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Settings/SettingsManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/SoundManger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Settings/Save/Model/SaveInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/NewNodePanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Settings/Save/SaveManager.cs" />
       </list>
     </option>
   </component>
@@ -186,10 +187,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="10268">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14748">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="10268" />
+      <option name="pid" value="14748" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -240,6 +241,12 @@
       <workItem from="1602685950260" duration="3535000" />
       <workItem from="1602694873514" duration="573000" />
       <workItem from="1602695978000" duration="70000" />
+      <workItem from="1602696353429" duration="599000" />
+      <workItem from="1602736249251" duration="623000" />
+      <workItem from="1602741623829" duration="4878000" />
+      <workItem from="1602746552010" duration="305000" />
+      <workItem from="1602746979493" duration="586000" />
+      <workItem from="1602747813540" duration="700000" />
     </task>
     <servers />
   </component>
@@ -256,94 +263,98 @@
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
     <state x="1107" y="200" key="#xdebugger.evaluate/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602688145268" />
-<state width="628" height="464" key="DebuggerActiveHint" timestamp="1602695113150">
+    <state width="628" height="464" key="DebuggerActiveHint" timestamp="1602748013951">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="628" height="464" key="DebuggerActiveHint/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695113150" />
-    <state width="2517" height="217" key="GridCell.Tab.0.bottom" timestamp="1602695446304">
+    <state width="628" height="464" key="DebuggerActiveHint/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748013951" />
+    <state width="2517" height="298" key="GridCell.Tab.0.bottom" timestamp="1602748513744">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="217" key="GridCell.Tab.0.bottom/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695446304" />
+    <state width="2517" height="298" key="GridCell.Tab.0.bottom/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748513744" />
     <state width="2517" height="388" key="GridCell.Tab.0.bottom/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="217" key="GridCell.Tab.0.center" timestamp="1602695446304">
+    <state width="2517" height="298" key="GridCell.Tab.0.center" timestamp="1602748513744">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="217" key="GridCell.Tab.0.center/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695446304" />
+    <state width="2517" height="298" key="GridCell.Tab.0.center/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748513744" />
     <state width="2517" height="388" key="GridCell.Tab.0.center/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="217" key="GridCell.Tab.0.left" timestamp="1602695446304">
+    <state width="2517" height="298" key="GridCell.Tab.0.left" timestamp="1602748513744">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="217" key="GridCell.Tab.0.left/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695446304" />
+    <state width="2517" height="298" key="GridCell.Tab.0.left/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748513744" />
     <state width="2517" height="388" key="GridCell.Tab.0.left/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="217" key="GridCell.Tab.0.right" timestamp="1602695446304">
+    <state width="2517" height="298" key="GridCell.Tab.0.right" timestamp="1602748513744">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="217" key="GridCell.Tab.0.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695446304" />
+    <state width="2517" height="298" key="GridCell.Tab.0.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748513744" />
     <state width="2517" height="388" key="GridCell.Tab.0.right/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="217" key="GridCell.Tab.1.bottom" timestamp="1602695446304">
+    <state width="2517" height="298" key="GridCell.Tab.1.bottom" timestamp="1602748513744">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="217" key="GridCell.Tab.1.bottom/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695446304" />
+    <state width="2517" height="298" key="GridCell.Tab.1.bottom/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748513744" />
     <state width="2517" height="388" key="GridCell.Tab.1.bottom/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="217" key="GridCell.Tab.1.center" timestamp="1602695446304">
+    <state width="2517" height="298" key="GridCell.Tab.1.center" timestamp="1602748513744">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="217" key="GridCell.Tab.1.center/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695446304" />
+    <state width="2517" height="298" key="GridCell.Tab.1.center/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748513744" />
     <state width="2517" height="388" key="GridCell.Tab.1.center/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="217" key="GridCell.Tab.1.left" timestamp="1602695446304">
+    <state width="2517" height="298" key="GridCell.Tab.1.left" timestamp="1602748513744">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="217" key="GridCell.Tab.1.left/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695446304" />
+    <state width="2517" height="298" key="GridCell.Tab.1.left/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748513744" />
     <state width="2517" height="388" key="GridCell.Tab.1.left/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="217" key="GridCell.Tab.1.right" timestamp="1602695446304">
+    <state width="2517" height="298" key="GridCell.Tab.1.right" timestamp="1602748513744">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="217" key="GridCell.Tab.1.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695446304" />
+    <state width="2517" height="298" key="GridCell.Tab.1.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748513744" />
     <state width="2517" height="388" key="GridCell.Tab.1.right/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="217" key="GridCell.Tab.2.bottom" timestamp="1602695446304">
+    <state width="2517" height="298" key="GridCell.Tab.2.bottom" timestamp="1602748513745">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="217" key="GridCell.Tab.2.bottom/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695446304" />
+    <state width="2517" height="298" key="GridCell.Tab.2.bottom/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748513745" />
     <state width="2517" height="388" key="GridCell.Tab.2.bottom/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="217" key="GridCell.Tab.2.center" timestamp="1602695446304">
+    <state width="2517" height="298" key="GridCell.Tab.2.center" timestamp="1602748513745">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="217" key="GridCell.Tab.2.center/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695446304" />
+    <state width="2517" height="298" key="GridCell.Tab.2.center/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748513745" />
     <state width="2517" height="388" key="GridCell.Tab.2.center/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="217" key="GridCell.Tab.2.left" timestamp="1602695446304">
+    <state width="2517" height="298" key="GridCell.Tab.2.left" timestamp="1602748513744">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="217" key="GridCell.Tab.2.left/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695446304" />
+    <state width="2517" height="298" key="GridCell.Tab.2.left/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748513744" />
     <state width="2517" height="388" key="GridCell.Tab.2.left/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="217" key="GridCell.Tab.2.right" timestamp="1602695446304">
+    <state width="2517" height="298" key="GridCell.Tab.2.right" timestamp="1602748513745">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="217" key="GridCell.Tab.2.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695446304" />
+    <state width="2517" height="298" key="GridCell.Tab.2.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748513745" />
     <state width="2517" height="388" key="GridCell.Tab.2.right/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="217" key="GridCell.Tab.3.bottom" timestamp="1602695446304">
+    <state width="2517" height="298" key="GridCell.Tab.3.bottom" timestamp="1602748513745">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="217" key="GridCell.Tab.3.bottom/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695446304" />
+    <state width="2517" height="298" key="GridCell.Tab.3.bottom/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748513745" />
     <state width="2517" height="388" key="GridCell.Tab.3.bottom/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="217" key="GridCell.Tab.3.center" timestamp="1602695446304">
+    <state width="2517" height="298" key="GridCell.Tab.3.center" timestamp="1602748513745">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="217" key="GridCell.Tab.3.center/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695446304" />
+    <state width="2517" height="298" key="GridCell.Tab.3.center/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748513745" />
     <state width="2517" height="388" key="GridCell.Tab.3.center/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="217" key="GridCell.Tab.3.left" timestamp="1602695446304">
+    <state width="2517" height="298" key="GridCell.Tab.3.left" timestamp="1602748513745">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="217" key="GridCell.Tab.3.left/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695446304" />
+    <state width="2517" height="298" key="GridCell.Tab.3.left/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748513745" />
     <state width="2517" height="388" key="GridCell.Tab.3.left/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
-    <state width="2517" height="217" key="GridCell.Tab.3.right" timestamp="1602695446304">
+    <state width="2517" height="298" key="GridCell.Tab.3.right" timestamp="1602748513745">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="217" key="GridCell.Tab.3.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602695446304" />
+    <state width="2517" height="298" key="GridCell.Tab.3.right/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602748513745" />
     <state width="2517" height="388" key="GridCell.Tab.3.right/0.0.2560.1080/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602147025546" />
     <state x="1123" y="234" key="RiderGenerateDialog" timestamp="1602506341500">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
     <state x="1123" y="234" key="RiderGenerateDialog/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602506341500" />
+    <state x="841" y="274" width="877" height="806" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1602746456784">
+      <screen x="0" y="0" width="2560" height="1080" />
+    </state>
+    <state x="841" y="274" width="877" height="806" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602746456784" />
     <state x="2552" y="-8" width="1296" height="1096" key="dock-window-1" timestamp="1602696047707">
       <screen x="2560" y="0" width="2560" height="1080" />
     </state>
@@ -352,221 +363,15 @@
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
     <state x="936" y="250" key="run.anything.popup/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602598359864" />
-    <state x="943" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1602696014599">
+    <state x="943" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1602746306091">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state x="943" y="235" width="672" height="678" key="search.everywhere.popup/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602696014599" />
+    <state x="943" y="235" width="672" height="678" key="search.everywhere.popup/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602746306091" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/704BABAA-7696-4062-81C7-3643735F7733/6a/de3973e0/Condition.cs</url>
-          <line>18</line>
-          <properties documentPath="C:\Users\SplavOP\AppData\Roaming\JetBrains\Rider2020.2\resharper-host\DecompilerCache\decompiler\704BABAA-7696-4062-81C7-3643735F7733\6a\de3973e0\Condition.cs" initialLine="18">
-            <startOffsets>
-              <option value="618" />
-            </startOffsets>
-            <endOffsets>
-              <option value="932" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/704BABAA-7696-4062-81C7-3643735F7733/8c/3fe33d4b/LengthCondition.cs</url>
-          <line>42</line>
-          <properties documentPath="C:\Users\SplavOP\AppData\Roaming\JetBrains\Rider2020.2\resharper-host\DecompilerCache\decompiler\704BABAA-7696-4062-81C7-3643735F7733\8c\3fe33d4b\LengthCondition.cs" initialLine="42">
-            <startOffsets>
-              <option value="1179" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1235" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/538B2D01-3E8F-4510-AC0E-6F0D9312B2F8/6c/e0d4fbd6/GridCondition.cs</url>
-          <line>42</line>
-          <properties documentPath="C:\Users\SplavOP\AppData\Roaming\JetBrains\Rider2020.2\resharper-host\DecompilerCache\decompiler\538B2D01-3E8F-4510-AC0E-6F0D9312B2F8\6c\e0d4fbd6\GridCondition.cs" initialLine="42">
-            <startOffsets>
-              <option value="1632" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1633" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$USER_HOME$/source/repos/TestYandexSpeachKit/UnityEngineSwipeDetector/Detectors/MouseSwipeDetector.cs</url>
-          <line>167</line>
-          <properties documentPath="C:\Users\SplavOP\source\repos\TestYandexSpeachKit\UnityEngineSwipeDetector\Detectors\MouseSwipeDetector.cs" initialLine="167">
-            <startOffsets>
-              <option value="5549" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5582" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/ViewInfoController.cs</url>
-          <line>112</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Calendar\InfoPanel\ViewInfoController.cs" initialLine="111">
-            <startOffsets>
-              <option value="3655" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3703" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/ViewInfoController.cs</url>
-          <line>114</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Calendar\InfoPanel\ViewInfoController.cs" initialLine="113">
-            <startOffsets>
-              <option value="3729" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3805" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/ViewInfoController.cs</url>
-          <line>99</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Calendar\InfoPanel\ViewInfoController.cs" initialLine="99">
-            <startOffsets>
-              <option value="3184" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3398" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/ViewInfoController.cs</url>
-          <line>84</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Calendar\InfoPanel\ViewInfoController.cs" initialLine="84">
-            <startOffsets>
-              <option value="2679" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2882" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/TabsController.cs</url>
-          <line>56</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Calendar\InfoPanel\Tabs\TabsController.cs" initialLine="56">
-            <startOffsets>
-              <option value="1506" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1536" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/TabsController.cs</url>
-          <line>75</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Calendar\InfoPanel\Tabs\TabsController.cs" initialLine="74">
-            <startOffsets>
-              <option value="2284" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2303" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/TabsController.cs</url>
-          <line>72</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Calendar\InfoPanel\Tabs\TabsController.cs" initialLine="71">
-            <startOffsets>
-              <option value="2149" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2180" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/TabsController.cs</url>
-          <line>62</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Calendar\InfoPanel\Tabs\TabsController.cs" initialLine="62">
-            <startOffsets>
-              <option value="1716" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1746" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/ViewInfoController.cs</url>
-          <line>119</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Calendar\InfoPanel\ViewInfoController.cs" initialLine="119">
-            <startOffsets>
-              <option value="3912" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4088" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/TabsController.cs</url>
-          <line>57</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Calendar\InfoPanel\Tabs\TabsController.cs" initialLine="57">
-            <startOffsets>
-              <option value="1549" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1690" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/InfoPanelController.cs</url>
-          <line>35</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Calendar\InfoPanel\InfoPanelController.cs" initialLine="35">
-            <startOffsets>
-              <option value="1114" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1147" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
-        <watch expression="_audioFlowChart.Current" language="C#" />
-        <watch expression="_audioFlowChart.Current.Value.CashedClip" language="C#" />
-        <watch expression="((AudioFlowChartNode)current).IsChildNodeOf(treeNode)" language="C#" />
-        <watch expression="((AudioFlowChartNode)current)" language="C#" />
-        <watch expression="current.IsRoot" language="C#" />
         <watch expression="treeNode" language="C#" />
-        <watch expression="textItem.GetComponent&lt;RectTransform&gt;().rect.height" language="C#" />
-        <watch expression="rectTextItem.rect" language="C#" />
       </configuration>
     </watches-manager>
   </component>

@@ -93,6 +93,7 @@
             </e>
           </e>
           <e p="Core" t="Include">
+            <e p="DataManager.cs" t="Include" />
             <e p="EventManager.cs" t="Include" />
           </e>
           <e p="Data" t="Include">
@@ -113,6 +114,16 @@
           <e p="OrderExecuter" t="Include">
             <e p="IStartable.cs" t="Include" />
             <e p="OrderInitializer.cs" t="Include" />
+          </e>
+          <e p="Settings" t="Include">
+            <e p="Save" t="Include">
+              <e p="Model" t="Include">
+                <e p="NoteInfo.cs" t="Include" />
+                <e p="SaveInfo.cs" t="Include" />
+              </e>
+              <e p="SaveManager.cs" t="Include" />
+            </e>
+            <e p="SettingsManager.cs" t="Include" />
           </e>
           <e p="Swipe" t="Include">
             <e p="SwipeController.cs" t="Include" />

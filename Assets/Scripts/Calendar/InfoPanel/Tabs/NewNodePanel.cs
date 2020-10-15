@@ -4,6 +4,8 @@ using Audio.CashedSounds.Default.Utils;
 using Calendar.InfoPanel.Utils;
 using Core;
 using Data.Calendar;
+using Settings.Save;
+using Settings.Save.Model;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
@@ -69,10 +71,14 @@ namespace Calendar.InfoPanel.Tabs
             if(string.IsNullOrEmpty(text))
                 return;
 
-            var newCalendarEvent =
-                new CalendarEventData(CalendarEventTypes.Notes, MainPageController.ActiveInfo.Date) {textInfo = text};
+            var newNoteEvent = CalendarEventData.NewNote(
+                new NoteInfo(MainPageController.ActiveInfo.Date, text));
             
-            EventManager.RaiseEvent(EventType.CalendarEventAdd, newCalendarEvent, 1);
+            var success = SaveManager.Instance.SaveToContainer(newNoteEvent);
+            if (!success)
+                return;
+            
+            EventManager.RaiseEvent(EventType.CalendarEventAdd, newNoteEvent);
             SoundManger.PlayQueued(DefaultSoundType.EventAdded);
             SetPanelActive(false);
         }

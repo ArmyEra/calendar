@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Calendar.DatePanel.Utils;
 
 namespace Extensions
@@ -76,6 +77,18 @@ namespace Extensions
             
             return date;
             //return DateTime.ParseExact(value, ConvertDateTimeFormat, CultureInfo.CurrentCulture);
+        }
+
+        public static IEnumerable<DateTime> GetFullYearDates(this DateTime date)
+        {
+            var finalDate = date.AddYears(1).AddDays(-1);
+            var promDate = date;
+
+            do
+            {
+                yield return promDate;
+                promDate = promDate.AddDays(1);
+            } while (promDate <= finalDate);
         }
     }
 }

@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Core;
 using Data.Calendar;
+using Extensions;
 using SpeechKitApi.Models;
+using SpeechKitApi.Utils;
 using UnityAsyncHelper.Core;
 using UnityEngine;
 using Utils;
@@ -27,7 +30,7 @@ namespace Audio.CashedSounds.Holiday
             EventManager.AddHandler(EventType.YandexClientCreated, SpeechKitClientCallback);
 
             //Только в Эдиотре прогоняем звуки на существование и генерируем те, что еще не существуют
-            DownloadSoundsFromResources(holidayContainer.datas);
+            //DownloadSoundsFromResources(holidayContainer.datas);
 #endif
         }
         
@@ -41,6 +44,29 @@ namespace Audio.CashedSounds.Holiday
                 DownloadSoundsFromInternet(
                     AudioParams.DefaultExternalOptions, 
                     AudioParams.SoundDirectory));
+
+            StartCoroutine(SelectDayByDay());
+        }
+
+        
+        private bool _lockGeneration;
+        private IEnumerator SelectDayByDay()
+        {
+            var startDate = new DateTime(2020, 1, 1);
+            foreach (var date in startDate.GetFullYearDates())
+            {
+                yield return new WaitWhile(() => _lockGeneration);
+                
+                Debug.Log($"Start date: {date:dd-MM-yyyy}");
+                var todayEvents = holidayContainer.datas
+                    .Where(d => d.ThisDayAndMonth(date)).ToArray();
+
+                if (todayEvents.Length > 0)
+                {
+                    _lockGeneration = true;
+                    _awaitGeneration.AddRange(todayEvents);
+                }
+            }
         }
 #endif
         
@@ -84,8 +110,8 @@ namespace Audio.CashedSounds.Holiday
 #if UNITY_EDITOR
                     if (clip == null)
                         _awaitGeneration.Add(eventData);
-                    else
-                        Debug.Log($"Sound \"{eventData.headerInfo}\" loaded from Resources");
+                    // else
+                    //     Debug.Log($"Sound \"{eventData.headerInfo}\" loaded from Resources");
 #endif    
                 }
                 
@@ -95,6 +121,7 @@ namespace Audio.CashedSounds.Holiday
         }
         
 #if UNITY_EDITOR
+
         /// <summary>
         /// Загрузка с Yandex.SpeechKit. Ожидает, что все что можно было, загружено, и что очередь не пустая 
         /// </summary>
@@ -114,6 +141,8 @@ namespace Audio.CashedSounds.Holiday
                 {
                     foreach (var headerInfo in headerInfos)
                         Debug.Log($"Sound \"{headerInfo}\" downloaded from internet");
+
+                    _lockGeneration = false;
                 }
                 
                 ThreadManager.AsyncExecute(

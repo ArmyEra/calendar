@@ -22,7 +22,7 @@ namespace Audio.Utils
         /// <summary>
         /// Каталог Resources
         /// </summary>
-        private static readonly string ResourcesFolder = $"{Application.dataPath}\\Resources";
+        public static readonly string ResourcesFolder = $"{Application.dataPath}\\Resources";
         
         /// <summary>
         /// Путь звука конкретного праздника (без расширения)

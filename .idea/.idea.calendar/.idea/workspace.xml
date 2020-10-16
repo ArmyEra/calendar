@@ -35,7 +35,6 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/2019.3.15/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/LayoutUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E98ED036-8295-432E-8C11-E52D6243EE11/2c/7d913dc7/Debug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/2019.3.15/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/87/ee540eba/IntrospectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E98ED036-8295-432E-8C11-E52D6243EE11/78/f9e56647/Logger.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Settings/Save/Model/NoteInfo.cs" root0="FORCE_HIGHLIGHTING" />
@@ -102,9 +101,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Swipe/SwipeTouchInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Swipe/Extensions/ResolutionExtensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Swipe/Extensions/SWipeExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Swipe/Extensions/FloatExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Swipe/Extensions/SwipeExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Swipe/Utils/Input/InputData.cs" />
@@ -138,7 +134,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/InfoPanelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/CalendarEventTypesExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/CalendarEventDataExtensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/ViewInfoController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/DatePanel/DateItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/TabsController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Settings/Save/SaveInfo.cs" />
@@ -153,6 +148,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/Tabs/NewNodePanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Settings/Save/SaveManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/DateTimeExtensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Utils/Params.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/CashedSounds/Holiday/HolidaySoundManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/CashedSounds/Default/Utils/DateTimeSoundManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Calendar/InfoPanel/ViewInfoController.cs" />
       </list>
     </option>
   </component>
@@ -188,10 +187,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12372">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="12372" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -249,6 +248,7 @@
       <workItem from="1602746979493" duration="586000" />
       <workItem from="1602747813540" duration="700000" />
       <workItem from="1602758013650" duration="408000" />
+      <workItem from="1602850671361" duration="483000" />
     </task>
     <servers />
   </component>
@@ -365,10 +365,10 @@
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
     <state x="936" y="250" key="run.anything.popup/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602598359864" />
-    <state x="943" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1602746306091">
+    <state x="943" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1602850985415">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state x="943" y="235" width="672" height="678" key="search.everywhere.popup/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602746306091" />
+    <state x="943" y="235" width="672" height="678" key="search.everywhere.popup/0.0.2560.1080/2560.0.2560.1080@0.0.2560.1080" timestamp="1602850985415" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -385,32 +385,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Extensions/DateTimeExtensions.cs</url>
-          <line>22</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Extensions\DateTimeExtensions.cs" initialLine="22">
-            <startOffsets>
-              <option value="781" />
-            </startOffsets>
-            <endOffsets>
-              <option value="854" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Extensions/DateTimeExtensions.cs</url>
-          <line>24</line>
-          <properties documentPath="C:\Users\SplavOP\Documents\Projects\calendar\Assets\Scripts\Extensions\DateTimeExtensions.cs" initialLine="24">
-            <startOffsets>
-              <option value="868" />
-            </startOffsets>
-            <endOffsets>
-              <option value="904" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

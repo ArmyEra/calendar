@@ -150,7 +150,7 @@ namespace Calendar.InfoPanel
             if(calendarEvents.IsAllOfType(CalendarEventTypes.Notes))
                 return;
             
-            SoundManger.PlayQueued(DateTimeSoundManager.GetInto(date), DefaultSoundType.HolidayProcess);
+            SoundManger.PlayQueued(DefaultSoundType.ThisDay);//, DefaultSoundType.HolidayProcess);
             SoundManger.PlayQueued(calendarEvents);
         }
         #endregion

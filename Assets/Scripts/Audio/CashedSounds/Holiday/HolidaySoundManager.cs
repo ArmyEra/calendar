@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Core;
 using Data.Calendar;
@@ -27,7 +28,7 @@ namespace Audio.CashedSounds.Holiday
             EventManager.AddHandler(EventType.YandexClientCreated, SpeechKitClientCallback);
 
             //Только в Эдиотре прогоняем звуки на существование и генерируем те, что еще не существуют
-            DownloadSoundsFromResources(holidayContainer.datas);
+            //DownloadSoundsFromResources(true, holidayContainer.datas);
 #endif
         }
         
@@ -61,17 +62,21 @@ namespace Audio.CashedSounds.Holiday
         /// </summary>
         public static void DownloadSoundFromResource(CalendarEventData eventData)
         {
-            Instance.DownloadSoundsFromResources(eventData);
+            Instance.DownloadSoundsFromResources(false, eventData);
         }
         
         /// <summary>
         /// Вызывается один раз для загрузки звука из Resources 
         /// </summary>
-        private void DownloadSoundsFromResources(params CalendarEventData[] calendarEventsData)
+        private void DownloadSoundsFromResources(bool onlyCheck, params CalendarEventData[] calendarEventsData)
         {
             foreach (var eventData in calendarEventsData)
             {
                 var fullResourceName = AudioParams.HolidaySoundSubPath(eventData.SourceId);
+#if UNITY_EDITOR
+                if(onlyCheck && File.Exists(Path.Combine(AudioParams.ResourcesFolder, fullResourceName)))
+                    continue;
+#endif
                 fullResourceName = fullResourceName.Replace('\\', '/');
                 
                 void SaveToDictionary(AsyncOperation asyncOperation)
@@ -88,7 +93,7 @@ namespace Audio.CashedSounds.Holiday
                         Debug.Log($"Sound \"{eventData.headerInfo}\" loaded from Resources");
 #endif    
                 }
-                
+
                 var request = Resources.LoadAsync(fullResourceName);
                 request.completed += SaveToDictionary;
             }

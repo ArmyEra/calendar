@@ -52,8 +52,8 @@ namespace Audio.CashedSounds.Holiday
         private bool _lockGeneration;
         private IEnumerator SelectDayByDay()
         {
-            var startDate = new DateTime(2020, 1, 1);
-            foreach (var date in startDate.GetFullYearDates())
+            var startDate = new DateTime(2020, 11, 7);
+            foreach (var date in startDate.GetToEndOfYear())
             {
                 yield return new WaitWhile(() => _lockGeneration);
                 

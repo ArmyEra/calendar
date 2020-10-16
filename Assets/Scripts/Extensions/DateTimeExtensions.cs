@@ -90,5 +90,17 @@ namespace Extensions
                 promDate = promDate.AddDays(1);
             } while (promDate <= finalDate);
         }
+
+        public static IEnumerable<DateTime> GetToEndOfYear(this DateTime date)
+        {
+            var finalDate = (new DateTime(date.Year, 1 ,1)).AddYears(1).AddDays(-1);
+            var promDate = date;
+            
+            do
+            {
+                yield return promDate;
+                promDate = promDate.AddDays(1);
+            } while (promDate <= finalDate);
+        }
     }
 }

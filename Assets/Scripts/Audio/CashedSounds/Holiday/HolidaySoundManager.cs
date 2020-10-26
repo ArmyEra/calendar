@@ -8,6 +8,7 @@ using SpeechKitApi.Models;
 using UnityAsyncHelper.Core;
 using UnityEngine;
 using Utils;
+using YandexSpeechKit;
 using AudioParams = Audio.Utils.Params;
 using EventType = Core.EventType;
 
@@ -18,6 +19,7 @@ namespace Audio.CashedSounds.Holiday
 #if UNITY_EDITOR
         private readonly List<CalendarEventData> _awaitGeneration = new List<CalendarEventData>();
         private bool _awaitInvoke = true;
+        private bool _lockGeneration;
 #endif
         
         [SerializeField] private CalendarEventsContainer holidayContainer;
@@ -41,7 +43,8 @@ namespace Audio.CashedSounds.Holiday
             StartCoroutine(
                 DownloadSoundsFromInternet(
                     AudioParams.DefaultExternalOptions, 
-                    AudioParams.SoundDirectory));
+                    AudioParams.SoundDirectory, 
+                    SpeechKitManager.Instance.enableLock));
         }
 #endif
         
@@ -103,7 +106,7 @@ namespace Audio.CashedSounds.Holiday
         /// <summary>
         /// Загрузка с Yandex.SpeechKit. Ожидает, что все что можно было, загружено, и что очередь не пустая 
         /// </summary>
-        private IEnumerator DownloadSoundsFromInternet(SynthesisExternalOptions externalOptions, string saveDirectoryPath)
+        private IEnumerator DownloadSoundsFromInternet(SynthesisExternalOptions externalOptions, string saveDirectoryPath, bool lockGenerationEnable = false)
         {
             while (_awaitInvoke)
             {
@@ -119,6 +122,9 @@ namespace Audio.CashedSounds.Holiday
                 {
                     foreach (var headerInfo in headerInfos)
                         Debug.Log($"Sound \"{headerInfo}\" downloaded from internet");
+
+                    if (lockGenerationEnable)
+                        _lockGeneration = false;
                 }
                 
                 ThreadManager.AsyncExecute(
@@ -131,6 +137,29 @@ namespace Audio.CashedSounds.Holiday
                 
                 _awaitGeneration.Clear();
             }
+        }
+
+        public void DownloadSoundFromInternetOneByOne(in CalendarEventData[] eventDatas)
+        {
+            var synthesisExternalOptions = AudioParams.DefaultExternalOptions;
+            var directoryPath = AudioParams.SoundDirectory;
+            
+            StartCoroutine(CorDownloadSoundFromInternetOneByOne(eventDatas, synthesisExternalOptions, directoryPath));
+        }
+        
+        private IEnumerator CorDownloadSoundFromInternetOneByOne(IEnumerable<CalendarEventData> eventDatas, SynthesisExternalOptions externalOptions, string saveDirectoryPath)
+        {
+            foreach (var data in eventDatas)
+            {
+                yield return new WaitUntil(()=> !_lockGeneration);
+                
+                _lockGeneration = true;
+                
+                _awaitGeneration.Clear();
+                _awaitGeneration.Add(data);
+            }
+            yield return new WaitUntil(()=> !_lockGeneration);
+            Debug.Log("All done!");
         }
 #endif
     }

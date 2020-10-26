@@ -15,6 +15,7 @@ namespace YandexSpeechKit
         public static SpeechKitClient Client { get; private set; }
 
         [SerializeField] private bool authorize;
+        public bool enableLock;
         
         public void OnStart()
         {
@@ -41,6 +42,10 @@ namespace YandexSpeechKit
             
             ThreadManager.AsyncExecute(AuthorizationBegin, InitializeCallback);
         }
+        
+        #if UNITY_EDITOR
+        
+        #endif
 
         private void OnDestroy()
         {

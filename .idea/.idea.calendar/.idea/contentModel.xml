@@ -15,6 +15,7 @@
         </e>
         <e p="Editor" t="Include">
           <e p="ArrayElementTitleDrawer.cs" t="Include" />
+          <e p="CalendarEventsContainerInspector.cs" t="Include" />
         </e>
         <e p="Libs" t="Include">
           <e p="Newtonsoft.Json.xml" t="Include" />
@@ -99,6 +100,9 @@
           <e p="Data" t="Include">
             <e p="calendar" t="Include">
               <e p="CalendarEventsContainer.cs" t="Include" />
+              <e p="HelpEditor" t="Include">
+                <e p="CalendarEventsSpeechSynthesisTool.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="Extensions" t="Include">

@@ -1,7 +1,6 @@
 ﻿using System;
 using Calendar.InfoPanel.Utils;
 using Extensions;
-using Settings.Save;
 using Settings.Save.Model;
 using SpeechKitApi.Utils;
 using UnityEngine;
